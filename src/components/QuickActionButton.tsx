@@ -13,8 +13,6 @@ export const QuickActionButton = ({
 }: QuickActionButtonProps) => {
   return <button onClick={onClick} className="flex flex-col items-center gap-2 group">
       
-      <span className="text-xs text-muted-foreground font-medium whitespace-nowrap">
-        {label}
-      </span>
+      
     </button>;
 };
