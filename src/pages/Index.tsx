@@ -145,7 +145,7 @@ const Index = () => {
               <img src={elliotAvatar} alt="Elliot" className="h-full w-full object-cover" />
             </div>
             <div>
-              <h1 className="text-base font-semibold">Welcome to Japan, Elliot!</h1>
+              <h1 className="text-sm font-semibold">Welcome to Japan, Elliot!</h1>
               <p className="text-xs text-muted-foreground">8 days to go</p>
             </div>
           </div>
