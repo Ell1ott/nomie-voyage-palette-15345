@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { EventListItem } from "@/components/EventListItem";
 import { QuickActionButton } from "@/components/QuickActionButton";
 import { AlertCard } from "@/components/AlertCard";
+import { PlaceCard } from "@/components/PlaceCard";
 import { useState } from "react";
 import { 
   Home, 
@@ -102,27 +103,40 @@ const Index = () => {
     }
   ];
 
-  const recommendations = [
+  const places = [
     {
-      title: "Golden Pavilion",
-      location: "Kyoto",
-      category: "Temple",
+      name: "The Golden Bridge",
+      location: "Hoi An · Da Nang",
+      category: "Attraction" as const,
+      rating: 5.0,
+      reviewCount: "12k",
+      image: "🌉",
+      discount: "-63%"
+    },
+    {
+      name: "Naman Retreat Resort",
+      location: "Da Nang",
+      category: "Hotel" as const,
+      rating: 4.9,
+      reviewCount: "8.5k",
+      image: "🏖️",
+      available: true
+    },
+    {
+      name: "Senso-ji Temple",
+      location: "Asakusa · Tokyo",
+      category: "Attraction" as const,
       rating: 4.8,
+      reviewCount: "15k",
       image: "⛩️"
     },
     {
-      title: "Naman Retreat",
-      location: "Da Nang",
-      category: "Resort",
-      rating: 5.0,
-      image: "🏖️"
-    },
-    {
-      title: "Halong Bay Cruise",
-      location: "Vietnam",
-      category: "Experience",
-      rating: 4.9,
-      image: "⛵"
+      name: "Tsukiji Market",
+      location: "Tsukiji · Tokyo",
+      category: "Restaurant" as const,
+      rating: 4.7,
+      reviewCount: "9k",
+      image: "🍜"
     }
   ];
 
@@ -301,38 +315,27 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Recommendations */}
+      {/* Discover Places */}
       <section className="mb-6">
-        <div className="flex items-center justify-between px-4 mb-3">
-          <h2 className="text-lg font-semibold">Recommended for You</h2>
-          <Button variant="ghost" size="sm" className="text-primary">
-            View All
-            <ChevronRight className="h-4 w-4 ml-1" />
-          </Button>
-        </div>
-        <div className="flex gap-3 px-4 overflow-x-auto scrollbar-hide">
-          {recommendations.map((rec, index) => (
-            <div key={index} className="featured-card min-w-[240px]">
-              <div className="relative h-32 bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
-                <div className="text-5xl">{rec.image}</div>
-              </div>
-              <div className="p-3">
-                <div className="flex items-start justify-between mb-1">
-                  <h4 className="text-sm font-semibold flex-1">{rec.title}</h4>
-                  <div className="flex items-center gap-1 text-xs font-medium">
-                    <span className="text-warning">★</span>
-                    <span>{rec.rating}</span>
-                  </div>
-                </div>
-                <p className="text-xs text-muted-foreground flex items-center gap-1">
-                  <MapPin className="h-3 w-3" />
-                  {rec.location}
-                </p>
-                <Badge variant="outline" className="mt-2 text-[10px] px-2 py-0.5">
-                  {rec.category}
-                </Badge>
-              </div>
+        <div className="px-4 mb-3">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-lg font-semibold">Discover Copenhagen</h2>
+              <p className="text-sm text-muted-foreground">Popular Places</p>
             </div>
+            <Button variant="ghost" size="sm" className="text-primary">
+              View All
+              <ChevronRight className="h-4 w-4 ml-1" />
+            </Button>
+          </div>
+        </div>
+        <div className="flex gap-3 px-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+          {places.map((place, index) => (
+            <PlaceCard
+              key={index}
+              {...place}
+              onClick={() => console.log('Place clicked:', place.name)}
+            />
           ))}
         </div>
       </section>
