@@ -68,7 +68,7 @@ export const FloatingChat = () => {
     <>
       {/* Chat Widget */}
       {isOpen && (
-        <div className="fixed bottom-24 right-4 w-[calc(100vw-2rem)] max-w-[380px] h-[70vh] max-h-[500px] bg-card border border-border rounded-2xl shadow-2xl flex flex-col z-40 animate-fade-in md:bottom-20">
+        <div className="fixed bottom-24 right-4 w-[calc(100vw-2rem)] max-w-[380px] h-[60vh] max-h-[420px] bg-card border border-border rounded-2xl shadow-2xl flex flex-col z-40 animate-in fade-in slide-in-from-bottom-4 zoom-in-95 duration-300 md:bottom-20">
           {/* Header */}
           <div className="flex items-center justify-between p-3 md:p-4 border-b border-border">
             <div className="flex items-center gap-2">
@@ -122,12 +122,12 @@ export const FloatingChat = () => {
       <Button
         onClick={() => setIsOpen(!isOpen)}
         size="icon"
-        className="fixed bottom-20 right-4 h-12 w-12 md:h-14 md:w-14 rounded-full shadow-lg z-40 md:bottom-4"
+        className="fixed bottom-20 right-4 h-12 w-12 md:h-14 md:w-14 rounded-full shadow-lg z-40 md:bottom-4 transition-all duration-300 hover:scale-110 active:scale-95"
       >
         {isOpen ? (
-          <X className="h-5 w-5 md:h-6 md:w-6" />
+          <X className="h-5 w-5 md:h-6 md:w-6 transition-transform duration-300 rotate-90" />
         ) : (
-          <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
+          <MessageCircle className="h-5 w-5 md:h-6 md:w-6 transition-transform duration-300" />
         )}
       </Button>
     </>
