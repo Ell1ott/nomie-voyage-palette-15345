@@ -6,153 +6,127 @@ import { AlertCard } from "@/components/AlertCard";
 import { PlaceCard } from "@/components/PlaceCard";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  Home, 
-  Compass, 
-  Calendar, 
-  MessageCircle, 
-  User,
-  MapPin,
-  Clock,
-  Plane,
-  Hotel,
-  Utensils,
-  Camera,
-  Map,
-  ChevronRight,
-  Search,
-  Bell,
-  Wallet,
-  Ticket
-} from "lucide-react";
-
+import { Home, Compass, Calendar, MessageCircle, User, MapPin, Clock, Plane, Hotel, Utensils, Camera, Map, ChevronRight, Search, Bell, Wallet, Ticket } from "lucide-react";
 const Index = () => {
   const navigate = useNavigate();
   const [showWeatherAlert, setShowWeatherAlert] = useState(true);
   const [showBudgetAlert, setShowBudgetAlert] = useState(true);
-
-  const upcomingTrips = [
-    {
-      destination: "Tokyo, Japan",
-      date: "Dec 15-22, 2024",
-      status: "Going",
-      image: "🗾",
-      daysUntil: 8,
-      activities: 12
-    },
-    {
-      destination: "Paris, France",
-      date: "Jan 10-17, 2025",
-      status: "Planning",
-      image: "🗼",
-      daysUntil: 34,
-      activities: 8
-    }
-  ];
-
-  const travelEvents = [
-    {
-      thumbnail: "✈️",
-      status: "going" as const,
-      category: "Flight",
-      categoryIcon: <Plane className="h-3 w-3" />,
-      title: "SAS Flight 123",
-      date: "13 Nov",
-      time: "15:00",
-      location: "Copenhagen Airport",
-      isNext24Hours: true
-    },
-    {
-      thumbnail: "🏨",
-      status: "booked" as const,
-      category: "Hotel",
-      categoryIcon: <Hotel className="h-3 w-3" />,
-      title: "Grand Hotel Copenhagen",
-      date: "13 Nov",
-      time: "Check-in 14:00",
-      location: "City Center, Copenhagen"
-    },
-    {
-      thumbnail: "🗾",
-      status: "going" as const,
-      category: "Activity",
-      categoryIcon: <Camera className="h-3 w-3" />,
-      title: "Visit Senso-ji Temple",
-      date: "15 Dec",
-      time: "09:00",
-      location: "Asakusa, Tokyo",
-      isLive: true
-    },
-    {
-      thumbnail: "🍜",
-      status: "booked" as const,
-      category: "Restaurant",
-      categoryIcon: <Utensils className="h-3 w-3" />,
-      title: "Lunch at Tsukiji Market",
-      date: "15 Dec",
-      time: "12:30",
-      location: "Tsukiji, Tokyo"
-    },
-    {
-      thumbnail: "🚄",
-      status: "pending" as const,
-      category: "Transport",
-      categoryIcon: <Plane className="h-3 w-3" />,
-      title: "Shinkansen to Kyoto",
-      date: "17 Dec",
-      time: "08:00",
-      location: "Tokyo Station"
-    }
-  ];
-
-  const places = [
-    {
-      name: "The Golden Bridge",
-      location: "Hoi An · Da Nang",
-      category: "Attraction" as const,
-      rating: 5.0,
-      reviewCount: "12k",
-      image: "🌉",
-      discount: "-63%"
-    },
-    {
-      name: "Naman Retreat Resort",
-      location: "Da Nang",
-      category: "Hotel" as const,
-      rating: 4.9,
-      reviewCount: "8.5k",
-      image: "🏖️",
-      available: true
-    },
-    {
-      name: "Senso-ji Temple",
-      location: "Asakusa · Tokyo",
-      category: "Attraction" as const,
-      rating: 4.8,
-      reviewCount: "15k",
-      image: "⛩️"
-    },
-    {
-      name: "Tsukiji Market",
-      location: "Tsukiji · Tokyo",
-      category: "Restaurant" as const,
-      rating: 4.7,
-      reviewCount: "9k",
-      image: "🍜"
-    }
-  ];
-
-  const categories = [
-    { name: "Attractions", icon: Camera, color: "text-primary" },
-    { name: "Food", icon: Utensils, color: "text-warning" },
-    { name: "Hotels", icon: Hotel, color: "text-secondary" },
-    { name: "Flights", icon: Plane, color: "text-success" },
-    { name: "Docs", icon: Wallet, color: "text-success" },
-    { name: "Phrases", icon: MessageCircle, color: "text-primary" }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background pb-20">
+  const upcomingTrips = [{
+    destination: "Tokyo, Japan",
+    date: "Dec 15-22, 2024",
+    status: "Going",
+    image: "🗾",
+    daysUntil: 8,
+    activities: 12
+  }, {
+    destination: "Paris, France",
+    date: "Jan 10-17, 2025",
+    status: "Planning",
+    image: "🗼",
+    daysUntil: 34,
+    activities: 8
+  }];
+  const travelEvents = [{
+    thumbnail: "✈️",
+    status: "going" as const,
+    category: "Flight",
+    categoryIcon: <Plane className="h-3 w-3" />,
+    title: "SAS Flight 123",
+    date: "13 Nov",
+    time: "15:00",
+    location: "Copenhagen Airport",
+    isNext24Hours: true
+  }, {
+    thumbnail: "🏨",
+    status: "booked" as const,
+    category: "Hotel",
+    categoryIcon: <Hotel className="h-3 w-3" />,
+    title: "Grand Hotel Copenhagen",
+    date: "13 Nov",
+    time: "Check-in 14:00",
+    location: "City Center, Copenhagen"
+  }, {
+    thumbnail: "🗾",
+    status: "going" as const,
+    category: "Activity",
+    categoryIcon: <Camera className="h-3 w-3" />,
+    title: "Visit Senso-ji Temple",
+    date: "15 Dec",
+    time: "09:00",
+    location: "Asakusa, Tokyo",
+    isLive: true
+  }, {
+    thumbnail: "🍜",
+    status: "booked" as const,
+    category: "Restaurant",
+    categoryIcon: <Utensils className="h-3 w-3" />,
+    title: "Lunch at Tsukiji Market",
+    date: "15 Dec",
+    time: "12:30",
+    location: "Tsukiji, Tokyo"
+  }, {
+    thumbnail: "🚄",
+    status: "pending" as const,
+    category: "Transport",
+    categoryIcon: <Plane className="h-3 w-3" />,
+    title: "Shinkansen to Kyoto",
+    date: "17 Dec",
+    time: "08:00",
+    location: "Tokyo Station"
+  }];
+  const places = [{
+    name: "The Golden Bridge",
+    location: "Hoi An · Da Nang",
+    category: "Attraction" as const,
+    rating: 5.0,
+    reviewCount: "12k",
+    image: "🌉",
+    discount: "-63%"
+  }, {
+    name: "Naman Retreat Resort",
+    location: "Da Nang",
+    category: "Hotel" as const,
+    rating: 4.9,
+    reviewCount: "8.5k",
+    image: "🏖️",
+    available: true
+  }, {
+    name: "Senso-ji Temple",
+    location: "Asakusa · Tokyo",
+    category: "Attraction" as const,
+    rating: 4.8,
+    reviewCount: "15k",
+    image: "⛩️"
+  }, {
+    name: "Tsukiji Market",
+    location: "Tsukiji · Tokyo",
+    category: "Restaurant" as const,
+    rating: 4.7,
+    reviewCount: "9k",
+    image: "🍜"
+  }];
+  const categories = [{
+    name: "Attractions",
+    icon: Camera,
+    color: "text-primary"
+  }, {
+    name: "Food",
+    icon: Utensils,
+    color: "text-warning"
+  }, {
+    name: "Hotels",
+    icon: Hotel,
+    color: "text-secondary"
+  }, {
+    name: "Flights",
+    icon: Plane,
+    color: "text-success"
+  }, {
+    name: "Docs",
+    icon: Wallet,
+    color: "text-success"
+  }];
+  return <div className="min-h-screen bg-background pb-20">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full bg-card border-b border-border">
         <div className="flex h-14 items-center justify-between px-4">
@@ -177,39 +151,19 @@ const Index = () => {
       </header>
 
       {/* Contextual Alerts */}
-      {showWeatherAlert && (
-        <section className="mb-4 mt-4">
-          <AlertCard
-            type="weather"
-            icon="🌧️"
-            headline="Rain Expected Tomorrow"
-            description="Pack an umbrella - showers forecasted for Dec 2-3 in Tokyo"
-            detail="Tokyo · Next 48 hours"
-            primaryAction={{
-              label: "View 7-Day Forecast",
-              onClick: () => console.log("View forecast")
-            }}
-            onDismiss={() => setShowWeatherAlert(false)}
-          />
-        </section>
-      )}
+      {showWeatherAlert && <section className="mb-4 mt-4">
+          <AlertCard type="weather" icon="🌧️" headline="Rain Expected Tomorrow" description="Pack an umbrella - showers forecasted for Dec 2-3 in Tokyo" detail="Tokyo · Next 48 hours" primaryAction={{
+        label: "View 7-Day Forecast",
+        onClick: () => console.log("View forecast")
+      }} onDismiss={() => setShowWeatherAlert(false)} />
+        </section>}
 
-      {showBudgetAlert && (
-        <section className="mb-4">
-          <AlertCard
-            type="budget"
-            icon="🎉"
-            headline="€150 Under Budget!"
-            description="You are doing great! Consider exploring more activities or upgrading your experience."
-            detail="Budget tracking · Updated today"
-            primaryAction={{
-              label: "Browse Activities",
-              onClick: () => console.log("Browse activities")
-            }}
-            onDismiss={() => setShowBudgetAlert(false)}
-          />
-        </section>
-      )}
+      {showBudgetAlert && <section className="mb-4">
+          <AlertCard type="budget" icon="🎉" headline="€150 Under Budget!" description="You are doing great! Consider exploring more activities or upgrading your experience." detail="Budget tracking · Updated today" primaryAction={{
+        label: "Browse Activities",
+        onClick: () => console.log("Browse activities")
+      }} onDismiss={() => setShowBudgetAlert(false)} />
+        </section>}
 
       {/* Next Activity - Featured Card */}
       <section className="p-4">
@@ -246,36 +200,11 @@ const Index = () => {
       {/* Quick Actions */}
       <section className="mb-6">
         <div className="flex gap-3 px-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
-          <QuickActionButton
-            icon={<Plane className="h-7 w-7" />}
-            label="Flights"
-            color="text-secondary"
-            onClick={() => console.log('Flights')}
-          />
-          <QuickActionButton
-            icon={<MessageCircle className="h-7 w-7" />}
-            label="Phrases"
-            color="text-primary"
-            onClick={() => console.log('Phrases')}
-          />
-          <QuickActionButton
-            icon={<Wallet className="h-7 w-7" />}
-            label="Docs"
-            color="text-success"
-            onClick={() => console.log('Docs')}
-          />
-          <QuickActionButton
-            icon={<Compass className="h-7 w-7" />}
-            label="Tips"
-            color="text-purple-500"
-            onClick={() => console.log('Tips')}
-          />
-          <QuickActionButton
-            icon={<Ticket className="h-7 w-7" />}
-            label="Bookings"
-            color="text-warning"
-            onClick={() => console.log('Bookings')}
-          />
+          
+          <QuickActionButton icon={<MessageCircle className="h-7 w-7" />} label="Phrases" color="text-primary" onClick={() => console.log('Phrases')} />
+          <QuickActionButton icon={<Wallet className="h-7 w-7" />} label="Docs" color="text-success" onClick={() => console.log('Docs')} />
+          <QuickActionButton icon={<Compass className="h-7 w-7" />} label="Tips" color="text-purple-500" onClick={() => console.log('Tips')} />
+          <QuickActionButton icon={<Ticket className="h-7 w-7" />} label="Bookings" color="text-warning" onClick={() => console.log('Bookings')} />
         </div>
       </section>
 
@@ -289,19 +218,13 @@ const Index = () => {
           </Button>
         </div>
         <div className="bg-card">
-          {travelEvents.slice(0, 5).map((event, index) => (
-            <EventListItem
-              key={index}
-              {...event}
-              onClick={() => {
-                if (event.category === 'Flight') {
-                  navigate('/flight/123');
-                } else {
-                  console.log('Event clicked:', event.title);
-                }
-              }}
-            />
-          ))}
+          {travelEvents.slice(0, 5).map((event, index) => <EventListItem key={index} {...event} onClick={() => {
+          if (event.category === 'Flight') {
+            navigate('/flight/123');
+          } else {
+            console.log('Event clicked:', event.title);
+          }
+        }} />)}
         </div>
       </section>
 
@@ -310,18 +233,13 @@ const Index = () => {
         <div className="px-4 mb-3">
           <h2 className="text-lg font-semibold">Explore</h2>
         </div>
-        <div className="grid grid-cols-3 gap-3 px-4">
-          {categories.map((category, index) => (
-            <button
-              key={index}
-              className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-card border border-border hover:bg-muted/50 transition-colors"
-            >
+        <div className="grid grid-cols-4 gap-3 px-4">
+          {categories.map((category, index) => <button key={index} className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-card border border-border hover:bg-muted/50 transition-colors">
               <div className={`p-3 rounded-xl bg-muted ${category.color}`}>
                 <category.icon className="h-5 w-5" />
               </div>
               <span className="text-xs font-medium">{category.name}</span>
-            </button>
-          ))}
+            </button>)}
         </div>
       </section>
 
@@ -340,13 +258,7 @@ const Index = () => {
           </div>
         </div>
         <div className="flex gap-3 px-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
-          {places.map((place, index) => (
-            <PlaceCard
-              key={index}
-              {...place}
-              onClick={() => console.log('Place clicked:', place.name)}
-            />
-          ))}
+          {places.map((place, index) => <PlaceCard key={index} {...place} onClick={() => console.log('Place clicked:', place.name)} />)}
         </div>
       </section>
 
@@ -360,8 +272,7 @@ const Index = () => {
           </Button>
         </div>
         <div className="bg-card">
-          {upcomingTrips.map((trip, index) => (
-            <div key={index} className="list-item">
+          {upcomingTrips.map((trip, index) => <div key={index} className="list-item">
               <div className="flex items-center gap-3">
                 <div className="text-4xl">{trip.image}</div>
                 <div className="flex-1 min-w-0">
@@ -385,8 +296,7 @@ const Index = () => {
                 </div>
                 <ChevronRight className="h-4 w-4 text-muted-foreground" />
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </section>
 
@@ -405,12 +315,7 @@ const Index = () => {
             <Calendar className="h-5 w-5" />
             <span className="text-[10px] mt-1">Trips</span>
           </Button>
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="flex-col h-auto py-2 px-4"
-            onClick={() => navigate('/chat')}
-          >
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4" onClick={() => navigate('/chat')}>
             <MessageCircle className="h-5 w-5" />
             <span className="text-[10px] mt-1">Chat</span>
           </Button>
@@ -420,8 +325,6 @@ const Index = () => {
           </Button>
         </div>
       </nav>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
