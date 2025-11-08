@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { EventListItem } from "@/components/EventListItem";
 import { 
   Home, 
   Compass, 
@@ -38,35 +39,58 @@ const Index = () => {
     }
   ];
 
-  const todayItinerary = [
+  const travelEvents = [
     {
-      time: "09:00",
-      title: "Visit Senso-ji Temple",
-      location: "Asakusa, Tokyo",
-      type: "attraction",
-      icon: Camera,
-      live: true
-    },
-    {
-      time: "12:30",
-      title: "Lunch at Tsukiji Market",
-      location: "Tsukiji, Tokyo",
-      type: "food",
-      icon: Utensils
-    },
-    {
+      thumbnail: "✈️",
+      status: "going" as const,
+      category: "Flight",
+      categoryIcon: <Plane className="h-3 w-3" />,
+      title: "SAS Flight 123",
+      date: "13 Nov",
       time: "15:00",
-      title: "Explore Shibuya Crossing",
-      location: "Shibuya, Tokyo",
-      type: "attraction",
-      icon: Map
+      location: "Copenhagen Airport",
+      isNext24Hours: true
     },
     {
-      time: "18:30",
-      title: "Dinner Reservation",
-      location: "Shinjuku, Tokyo",
-      type: "food",
-      icon: Utensils
+      thumbnail: "🏨",
+      status: "booked" as const,
+      category: "Hotel",
+      categoryIcon: <Hotel className="h-3 w-3" />,
+      title: "Grand Hotel Copenhagen",
+      date: "13 Nov",
+      time: "Check-in 14:00",
+      location: "City Center, Copenhagen"
+    },
+    {
+      thumbnail: "🗾",
+      status: "going" as const,
+      category: "Activity",
+      categoryIcon: <Camera className="h-3 w-3" />,
+      title: "Visit Senso-ji Temple",
+      date: "15 Dec",
+      time: "09:00",
+      location: "Asakusa, Tokyo",
+      isLive: true
+    },
+    {
+      thumbnail: "🍜",
+      status: "booked" as const,
+      category: "Restaurant",
+      categoryIcon: <Utensils className="h-3 w-3" />,
+      title: "Lunch at Tsukiji Market",
+      date: "15 Dec",
+      time: "12:30",
+      location: "Tsukiji, Tokyo"
+    },
+    {
+      thumbnail: "🚄",
+      status: "pending" as const,
+      category: "Transport",
+      categoryIcon: <Plane className="h-3 w-3" />,
+      title: "Shinkansen to Kyoto",
+      date: "17 Dec",
+      time: "08:00",
+      location: "Tokyo Station"
     }
   ];
 
@@ -158,49 +182,22 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Today's Itinerary */}
+      {/* Your Itinerary */}
       <section className="mb-6">
         <div className="flex items-center justify-between px-4 mb-3">
-          <h2 className="text-lg font-semibold">Today's Itinerary</h2>
+          <h2 className="text-lg font-semibold">Your Itinerary</h2>
           <Button variant="ghost" size="sm" className="text-primary">
-            View All
+            View All 12 Events
             <ChevronRight className="h-4 w-4 ml-1" />
           </Button>
         </div>
         <div className="bg-card">
-          {todayItinerary.map((item, index) => (
-            <div key={index} className="list-item">
-              <div className="flex items-start gap-3">
-                <div className="flex flex-col items-center">
-                  <div className="text-xs font-medium text-muted-foreground min-w-[40px]">
-                    {item.time}
-                  </div>
-                  {index < todayItinerary.length - 1 && (
-                    <div className="w-px h-12 bg-border mt-2" />
-                  )}
-                </div>
-                <div className={`p-2 rounded-xl ${
-                  item.type === 'food' ? 'bg-warning/10' : 'bg-secondary/10'
-                } mt-0.5`}>
-                  <item.icon className="h-4 w-4" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex-1 min-w-0">
-                      <h4 className="text-sm font-medium mb-1 flex items-center gap-2">
-                        {item.title}
-                        {item.live && <Badge variant="live" className="text-[10px] px-2 py-0">LIVE</Badge>}
-                      </h4>
-                      <p className="text-xs text-muted-foreground flex items-center gap-1">
-                        <MapPin className="h-3 w-3" />
-                        {item.location}
-                      </p>
-                    </div>
-                    <ChevronRight className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                  </div>
-                </div>
-              </div>
-            </div>
+          {travelEvents.slice(0, 5).map((event, index) => (
+            <EventListItem
+              key={index}
+              {...event}
+              onClick={() => console.log('Event clicked:', event.title)}
+            />
           ))}
         </div>
       </section>
