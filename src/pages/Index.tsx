@@ -248,7 +248,7 @@ const Index = () => {
       {/* Categories */}
       <section className="mb-6">
         <div className="px-4 mb-3">
-          <h2 className="text-lg font-semibold">Explore</h2>
+          <h2 className="text-lg font-semibold">Recommendations</h2>
         </div>
         <div className="grid grid-cols-3 gap-3 px-4">
           {categories.map((category, index) => <button key={index} className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-card border border-border hover:bg-muted/50 transition-colors">
