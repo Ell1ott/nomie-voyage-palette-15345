@@ -326,12 +326,9 @@ const Index = () => {
             <Home className="h-5 w-5 text-primary" />
             <span className="text-[10px] font-medium mt-1 text-primary">Home</span>
           </Button>
-          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4 relative">
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
             <Plane className="h-5 w-5" />
             <span className="text-[10px] mt-1">Trips</span>
-            <Badge className="absolute top-1 right-2 h-4 min-w-4 flex items-center justify-center px-1 text-[9px] bg-destructive">
-              3
-            </Badge>
           </Button>
           <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4" onClick={() => navigate('/explore')}>
             <Compass className="h-5 w-5" />
