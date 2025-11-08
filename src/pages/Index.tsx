@@ -159,7 +159,7 @@ const Index = () => {
               <span className="text-lg">✈️</span>
             </div>
             <div>
-              <h1 className="text-base font-semibold">Tokyo Trip</h1>
+              <h1 className="text-base font-semibold">hi elliot</h1>
               <p className="text-xs text-muted-foreground">8 days to go</p>
             </div>
           </div>
