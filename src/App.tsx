@@ -3,10 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { FloatingChat } from "@/components/FloatingChat";
-import { PageTransition } from "@/components/PageTransition";
 import Index from "./pages/Index";
 import Chat from "./pages/Chat";
 import AssistantChat from "./pages/AssistantChat";
@@ -28,22 +26,20 @@ const AppContent = () => {
   return (
     <>
       <ScrollToTop />
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<PageTransition><Index /></PageTransition>} />
-          <Route path="/chat" element={<PageTransition><Chat /></PageTransition>} />
-          <Route path="/assistant" element={<PageTransition><AssistantChat /></PageTransition>} />
-          <Route path="/explore" element={<PageTransition><Explore /></PageTransition>} />
-          <Route path="/phrases" element={<PageTransition><Phrases /></PageTransition>} />
-          <Route path="/documents" element={<PageTransition><Documents /></PageTransition>} />
-          <Route path="/transit" element={<PageTransition><Transit /></PageTransition>} />
-          <Route path="/food" element={<PageTransition><Food /></PageTransition>} />
-          <Route path="/profile" element={<PageTransition><Profile /></PageTransition>} />
-          <Route path="/flight/:id" element={<PageTransition><FlightDetail /></PageTransition>} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
-        </Routes>
-      </AnimatePresence>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/assistant" element={<AssistantChat />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/phrases" element={<Phrases />} />
+        <Route path="/documents" element={<Documents />} />
+        <Route path="/transit" element={<Transit />} />
+        <Route path="/food" element={<Food />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/flight/:id" element={<FlightDetail />} />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       {showFloatingChat && <FloatingChat />}
     </>
   );
