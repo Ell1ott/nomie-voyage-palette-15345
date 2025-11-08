@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
         name: "Nomie - Your AI Travel Companion",
         short_name: "Nomie",
         description: "Meet Nomie, your proactive AI travel companion that helps you discover and explore the world with personalized recommendations.",
-        theme_color: "#0EA5E9",
+        theme_color: "#FFFFFF",
         background_color: "#ffffff",
         display: "standalone",
         orientation: "portrait-primary",
@@ -43,41 +43,36 @@ export default defineConfig(({ mode }) => ({
         categories: ["travel", "lifestyle", "navigation"],
       },
       workbox: {
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2}"],
+        globPatterns: [],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-            handler: "CacheFirst",
+            handler: "NetworkFirst",
             options: {
               cacheName: "google-fonts-cache",
               expiration: {
-                maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+                maxEntries: 5,
+                maxAgeSeconds: 60 * 60 * 24 * 7, // 1 week
               },
-              cacheableResponse: {
-                statuses: [0, 200],
-              },
+              networkTimeoutSeconds: 3,
             },
           },
           {
             urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
-            handler: "CacheFirst",
+            handler: "NetworkFirst",
             options: {
               cacheName: "gstatic-fonts-cache",
               expiration: {
-                maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+                maxEntries: 5,
+                maxAgeSeconds: 60 * 60 * 24 * 7, // 1 week
               },
-              cacheableResponse: {
-                statuses: [0, 200],
-              },
+              networkTimeoutSeconds: 3,
             },
           },
         ],
       },
       devOptions: {
-        enabled: true,
-        type: "module",
+        enabled: false,
       },
     }),
   ].filter(Boolean),
