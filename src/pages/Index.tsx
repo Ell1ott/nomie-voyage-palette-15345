@@ -5,7 +5,8 @@ import { QuickActionButton } from "@/components/QuickActionButton";
 import { AlertCard } from "@/components/AlertCard";
 import { PlaceCard } from "@/components/PlaceCard";
 import { useState } from "react";
-import { 
+import { useNavigate } from "react-router-dom";
+import {
   Home, 
   Compass, 
   Calendar, 
@@ -26,6 +27,7 @@ import {
 } from "lucide-react";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [showWeatherAlert, setShowWeatherAlert] = useState(true);
   const [showBudgetAlert, setShowBudgetAlert] = useState(true);
 
@@ -395,7 +397,12 @@ const Index = () => {
             <Calendar className="h-5 w-5" />
             <span className="text-[10px] mt-1">Trips</span>
           </Button>
-          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="flex-col h-auto py-2 px-4"
+            onClick={() => navigate('/chat')}
+          >
             <MessageCircle className="h-5 w-5" />
             <span className="text-[10px] mt-1">Chat</span>
           </Button>
