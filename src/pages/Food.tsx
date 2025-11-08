@@ -387,7 +387,7 @@ const Food = () => {
                 </div>
                 <div className="flex items-center gap-3 text-sm mt-2">
                   <span>{restaurants[1].distance} away • {restaurants[1].walkTime} walk</span>
-                  <Badge className="bg-success">Open Now</Badge>
+                  <Badge className="bg-primary">Open Now</Badge>
                 </div>
               </div>
             </div>
