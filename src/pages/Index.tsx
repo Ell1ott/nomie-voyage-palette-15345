@@ -48,10 +48,10 @@ const Index = () => {
     status: "booked" as const,
     category: "Hotel",
     categoryIcon: <Hotel className="h-3 w-3" />,
-    title: "Grand Hotel Copenhagen",
+    title: "Rembrandt Hotel Tokyo Machida",
     date: "13 Nov",
     time: "Check-in 14:00",
-    location: "City Center, Copenhagen"
+    location: "Machida, Tokyo"
   }, {
     thumbnail: "🗾",
     status: "going" as const,
