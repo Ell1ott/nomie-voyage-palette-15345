@@ -235,6 +235,8 @@ const Index = () => {
           {travelEvents.slice(0, 5).map((event, index) => <EventListItem key={index} {...event} onClick={() => {
           if (event.category === 'Flight') {
             navigate('/flight/123');
+          } else if (event.category === 'Transport') {
+            navigate('/transit');
           } else {
             console.log('Event clicked:', event.title);
           }
