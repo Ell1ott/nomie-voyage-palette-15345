@@ -121,7 +121,7 @@ const Index = () => {
     color: "text-warning"
   }, {
     name: "Language",
-    icon: MessageCircle,
+    icon: Languages,
     color: "text-primary"
   }, {
     name: "Hotels",
