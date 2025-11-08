@@ -146,6 +146,7 @@ const Index = () => {
     { name: "Attractions", icon: Camera, color: "text-primary" },
     { name: "Food", icon: Utensils, color: "text-warning" },
     { name: "Hotels", icon: Hotel, color: "text-secondary" },
+    { name: "Phrases", icon: MessageCircle, color: "text-primary" },
     { name: "Flights", icon: Plane, color: "text-success" },
     { name: "Docs", icon: Wallet, color: "text-success" }
   ];
