@@ -54,6 +54,15 @@ const Index = () => {
     time: "08:00",
     location: "Tokyo Station"
   }, {
+    thumbnail: "🍜",
+    status: "booked" as const,
+    category: "Restaurant",
+    categoryIcon: <Utensils className="h-3 w-3" />,
+    title: "Lunch at Tsukiji Market",
+    date: "15 Dec",
+    time: "12:30",
+    location: "Tsukiji, Tokyo"
+  }, {
     thumbnail: "🏨",
     status: "booked" as const,
     category: "Hotel",
@@ -72,15 +81,6 @@ const Index = () => {
     time: "09:00",
     location: "Asakusa, Tokyo",
     isLive: true
-  }, {
-    thumbnail: "🍜",
-    status: "booked" as const,
-    category: "Restaurant",
-    categoryIcon: <Utensils className="h-3 w-3" />,
-    title: "Lunch at Tsukiji Market",
-    date: "15 Dec",
-    time: "12:30",
-    location: "Tsukiji, Tokyo"
   }];
   const places = [{
     name: "Senso-ji Temple",
