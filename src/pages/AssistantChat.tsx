@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowLeft, Plus, ArrowUp } from "lucide-react";
@@ -49,16 +50,26 @@ export default function AssistantChat() {
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col items-center justify-center px-4 pb-32">
-        <div className="w-full max-w-2xl text-center space-y-6">
+        <motion.div 
+          className="w-full max-w-2xl text-center space-y-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
           {/* Avatar */}
           <div className="flex justify-center mb-8">
-            <div className="h-32 w-32 rounded-full bg-primary/10 flex items-center justify-center">
+            <motion.div 
+              className="h-32 w-32 rounded-full bg-primary/10 flex items-center justify-center"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.1 }}
+            >
               <img 
                 src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGJrZ3NlejZ4ZXlvaDRnbTR1b2VmcG1waGM1Y3hvNGU4aGE0aHcweSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26BkNnO2qmCWTQuac/giphy.gif"
                 alt="Nomie character"
                 className="h-full w-full rounded-full object-cover"
               />
-            </div>
+            </motion.div>
           </div>
 
           {/* Greeting */}
@@ -70,7 +81,7 @@ export default function AssistantChat() {
               What would you like to do first?
             </p>
           </div>
-        </div>
+        </motion.div>
       </main>
 
       {/* Input Area */}
