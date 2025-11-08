@@ -358,9 +358,6 @@ const Food = () => {
                 <div className="text-8xl">{restaurants[1].image}</div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <Badge className="absolute top-3 left-3 bg-primary">
-                Highly Rated
-              </Badge>
               <Button
                 variant="ghost"
                 size="icon"
