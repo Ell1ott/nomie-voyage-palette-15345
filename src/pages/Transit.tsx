@@ -200,9 +200,6 @@ const Transit = () => {
             <MapPin className="h-4 w-4 text-primary" />
             <span>Haneda Airport, Tokyo</span>
           </div>
-          <Badge variant="secondary" className="text-xs">
-            🇬🇧 EN
-          </Badge>
         </div>
       </header>
 
