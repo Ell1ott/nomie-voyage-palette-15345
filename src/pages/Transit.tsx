@@ -22,6 +22,7 @@ import {
   AlertCircle
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import tokyoCityscape from "@/assets/tokyo-cityscape.jpg";
 
 interface RouteStep {
   id: number;
@@ -207,8 +208,14 @@ const Transit = () => {
 
       {/* Hero Context Card */}
       <section className="p-4">
-        <Card className="bg-gradient-to-br from-blue-400 to-blue-600 border-0 text-white">
-          <div className="p-6">
+        <Card className="relative overflow-hidden border-0">
+          <img 
+            src={tokyoCityscape} 
+            alt="Tokyo cityscape" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/30" />
+          <div className="relative p-6 text-white">
             <div className="text-5xl mb-3">🚇</div>
             <h2 className="text-xl font-bold mb-2">Welcome to Tokyo, Elliot!</h2>
             <p className="text-[15px] mb-3 opacity-90">
