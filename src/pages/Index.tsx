@@ -45,6 +45,15 @@ const Index = () => {
     location: "Copenhagen Airport",
     isNext24Hours: true
   }, {
+    thumbnail: "🚄",
+    status: "pending" as const,
+    category: "Transport",
+    categoryIcon: <Plane className="h-3 w-3" />,
+    title: "Shinkansen to Kyoto",
+    date: "17 Dec",
+    time: "08:00",
+    location: "Tokyo Station"
+  }, {
     thumbnail: "🏨",
     status: "booked" as const,
     category: "Hotel",
@@ -72,15 +81,6 @@ const Index = () => {
     date: "15 Dec",
     time: "12:30",
     location: "Tsukiji, Tokyo"
-  }, {
-    thumbnail: "🚄",
-    status: "pending" as const,
-    category: "Transport",
-    categoryIcon: <Plane className="h-3 w-3" />,
-    title: "Shinkansen to Kyoto",
-    date: "17 Dec",
-    time: "08:00",
-    location: "Tokyo Station"
   }];
   const places = [{
     name: "Senso-ji Temple",
