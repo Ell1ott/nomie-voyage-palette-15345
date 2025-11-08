@@ -291,7 +291,13 @@ const Index = () => {
             <EventListItem
               key={index}
               {...event}
-              onClick={() => console.log('Event clicked:', event.title)}
+              onClick={() => {
+                if (event.category === 'Flight') {
+                  navigate('/flight/123');
+                } else {
+                  console.log('Event clicked:', event.title);
+                }
+              }}
             />
           ))}
         </div>
