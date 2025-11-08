@@ -10,6 +10,7 @@ import { Home, Compass, Calendar, MessageCircle, User, MapPin, Clock, Plane, Hot
 import sensojiImage from "@/assets/sensoji-temple.jpg";
 import elliotAvatar from "@/assets/elliot-avatar.png";
 import sensojiPlaceImage from "@/assets/sensoji-place.jpg";
+import tokyoTripImage from "@/assets/tokyo-trip.jpg";
 const Index = () => {
   const navigate = useNavigate();
   const [showWeatherAlert, setShowWeatherAlert] = useState(true);
@@ -18,7 +19,7 @@ const Index = () => {
     destination: "Tokyo, Japan",
     date: "Dec 15-22, 2024",
     status: "Going",
-    image: "🗾",
+    image: tokyoTripImage,
     daysUntil: 8,
     activities: 12
   }, {
@@ -284,7 +285,13 @@ const Index = () => {
         <div className="bg-card">
           {upcomingTrips.map((trip, index) => <div key={index} className="list-item">
               <div className="flex items-center gap-3">
-                <div className="text-4xl">{trip.image}</div>
+                <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+                  {typeof trip.image === 'string' && (trip.image.startsWith('http') || trip.image.includes('assets')) ? (
+                    <img src={trip.image} alt={trip.destination} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="text-4xl flex items-center justify-center w-full h-full">{trip.image}</div>
+                  )}
+                </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-2 mb-1">
                     <h4 className="text-sm font-semibold">{trip.destination}</h4>
