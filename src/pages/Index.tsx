@@ -214,8 +214,8 @@ const Index = () => {
       <section className="mb-6">
         <div className="flex gap-3 px-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
           
-          <QuickActionButton icon={<MessageCircle className="h-7 w-7" />} label="Phrases" color="text-primary" onClick={() => console.log('Phrases')} />
-          <QuickActionButton icon={<Wallet className="h-7 w-7" />} label="Docs" color="text-success" onClick={() => console.log('Docs')} />
+          <QuickActionButton icon={<MessageCircle className="h-7 w-7" />} label="Phrases" color="text-primary" onClick={() => navigate('/phrases')} />
+          <QuickActionButton icon={<Wallet className="h-7 w-7" />} label="Docs" color="text-success" onClick={() => navigate('/documents')} />
           <QuickActionButton icon={<Compass className="h-7 w-7" />} label="Tips" color="text-purple-500" onClick={() => console.log('Tips')} />
           <QuickActionButton icon={<Ticket className="h-7 w-7" />} label="Bookings" color="text-warning" onClick={() => console.log('Bookings')} />
         </div>
