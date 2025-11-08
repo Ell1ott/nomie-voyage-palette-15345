@@ -7,7 +7,7 @@ import { PlaceCard } from "@/components/PlaceCard";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Home, Compass, Calendar, MessageCircle, User, MapPin, Clock, Plane, Hotel, Utensils, Camera, Map, ChevronRight, Search, Bell, Wallet, Ticket, Languages } from "lucide-react";
-import sensojiImage from "@/assets/sensoji-temple.jpg";
+import tokyoCityscapeImage from "@/assets/tokyo-cityscape.jpg";
 import elliotAvatar from "@/assets/elliot-avatar.png";
 import sensojiPlaceImage from "@/assets/sensoji-place.jpg";
 import tokyoTripImage from "@/assets/tokyo-trip.jpg";
@@ -183,8 +183,8 @@ const Index = () => {
         <div className="featured-card">
           <div className="relative h-40 overflow-hidden">
             <img 
-              src={sensojiImage} 
-              alt="Senso-ji Temple" 
+              src={tokyoCityscapeImage} 
+              alt="Tokyo Transport" 
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -192,19 +192,19 @@ const Index = () => {
           <div className="p-4">
             <div className="flex items-start justify-between mb-2">
               <div className="flex-1">
-                <h3 className="text-lg font-semibold mb-1">Visit Senso-ji Temple</h3>
+                <h3 className="text-lg font-semibold mb-1">Airport to Downtown Tokyo</h3>
                 <div className="flex items-center text-sm text-muted-foreground gap-3">
                   <span className="flex items-center gap-1">
                     <Clock className="h-3.5 w-3.5" />
-                    09:00 - 11:00
+                    13 Nov, 16:30
                   </span>
                   <span className="flex items-center gap-1">
                     <MapPin className="h-3.5 w-3.5" />
-                    Asakusa
+                    Narita Airport
                   </span>
                 </div>
               </div>
-              <Button size="sm">
+              <Button size="sm" onClick={() => navigate('/transit')}>
                 Navigate
               </Button>
             </div>
