@@ -120,7 +120,7 @@ const Index = () => {
     icon: Utensils,
     color: "text-warning"
   }, {
-    name: "Phrases",
+    name: "Language",
     icon: MessageCircle,
     color: "text-primary"
   }, {
