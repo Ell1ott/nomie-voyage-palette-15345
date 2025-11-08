@@ -6,7 +6,7 @@ const AnimatedGlobePlane = () => {
         viewBox="0 0 100 100"
         className="w-full h-full"
         fill="none"
-        stroke="white"
+        stroke="black"
         strokeWidth="2"
       >
         {/* Main circle */}
@@ -39,7 +39,7 @@ const AnimatedGlobePlane = () => {
         <svg
           viewBox="0 0 100 100"
           className="w-full h-full"
-          fill="white"
+          fill="black"
         >
           <path
             d="M50 20 L58 28 L56 30 L50 26 L44 30 L42 28 Z M50 26 L50 32"
