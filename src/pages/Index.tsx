@@ -322,25 +322,25 @@ const Index = () => {
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card border-t border-border">
         <div className="flex items-center justify-around h-16 px-2">
-          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-3 gap-1">
             <Home className="h-5 w-5 text-primary" />
-            <span className="text-[10px] font-medium mt-1 text-primary">Home</span>
+            <span className="text-[10px] font-medium text-primary">Home</span>
           </Button>
-          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-3 gap-1">
             <Plane className="h-5 w-5" />
-            <span className="text-[10px] mt-1">Trips</span>
+            <span className="text-[10px]">Trips</span>
           </Button>
-          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4" onClick={() => navigate('/explore')}>
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-3 gap-1" onClick={() => navigate('/explore')}>
             <Compass className="h-5 w-5" />
-            <span className="text-[10px] mt-1">Explore</span>
+            <span className="text-[10px]">Explore</span>
           </Button>
-          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4" onClick={() => navigate('/phrases')}>
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-3 gap-1" onClick={() => navigate('/phrases')}>
             <Languages className="h-5 w-5" />
-            <span className="text-[10px] mt-1">Language</span>
+            <span className="text-[10px]">Language</span>
           </Button>
-          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-3 gap-1">
             <User className="h-5 w-5" />
-            <span className="text-[10px] mt-1">Profile</span>
+            <span className="text-[10px]">Profile</span>
           </Button>
         </div>
       </nav>
