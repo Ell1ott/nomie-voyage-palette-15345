@@ -7,6 +7,7 @@ import { ArrowLeft, MapPin, Utensils, Camera, Filter, Search } from "lucide-reac
 import sensojiPlaceImage from "@/assets/sensoji-place.jpg";
 import tokyoSkytreeImage from "@/assets/tokyo-skytree.png";
 import shibuyaCrossingImage from "@/assets/shibuya-crossing-new.png";
+import ichiranRamenImage from "@/assets/ichiran-ramen-new.png";
 
 const Explore = () => {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const Explore = () => {
       category: "Restaurant" as const,
       rating: 4.9,
       reviewCount: "18k",
-      image: "🍜"
+      image: ichiranRamenImage
     },
     {
       name: "Tsukiji Outer Market",
