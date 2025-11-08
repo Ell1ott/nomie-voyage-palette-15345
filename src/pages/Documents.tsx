@@ -190,16 +190,6 @@ const Documents = () => {
         </div>
       </header>
 
-      {/* Reminders Toggle */}
-      <section className="px-4 mb-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-medium">Smart Reminders</span>
-          </div>
-          <Switch checked={remindersEnabled} onCheckedChange={setRemindersEnabled} />
-        </div>
-      </section>
-
       {/* Required Documents */}
       <section className="px-4 mb-6">
         <div className="flex items-center justify-between mb-3">
