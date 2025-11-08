@@ -4,6 +4,7 @@ import { EventListItem } from "@/components/EventListItem";
 import { QuickActionButton } from "@/components/QuickActionButton";
 import { AlertCard } from "@/components/AlertCard";
 import { PlaceCard } from "@/components/PlaceCard";
+import { RecommendationsSection } from "@/components/RecommendationsSection";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Home, Compass, Calendar, MessageCircle, User, MapPin, Clock, Plane, Hotel, Utensils, Camera, Map, ChevronRight, Search, Bell, Wallet, Ticket, Languages } from "lucide-react";
@@ -176,6 +177,11 @@ const Index = () => {
         onClick: () => console.log("Browse activities")
       }} onDismiss={() => setShowBudgetAlert(false)} />
         </section>}
+
+      {/* Personalized Recommendations */}
+      <section className="px-4">
+        <RecommendationsSection />
+      </section>
 
       {/* Next Activity - Featured Card */}
       <section className="p-4">
