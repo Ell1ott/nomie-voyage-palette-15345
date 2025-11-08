@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { EventListItem } from "@/components/EventListItem";
 import { QuickActionButton } from "@/components/QuickActionButton";
+import { AlertCard } from "@/components/AlertCard";
+import { useState } from "react";
 import { 
   Home, 
   Compass, 
@@ -23,6 +25,9 @@ import {
 } from "lucide-react";
 
 const Index = () => {
+  const [showWeatherAlert, setShowWeatherAlert] = useState(true);
+  const [showBudgetAlert, setShowBudgetAlert] = useState(true);
+
   const upcomingTrips = [
     {
       destination: "Tokyo, Japan",
@@ -152,6 +157,41 @@ const Index = () => {
           </div>
         </div>
       </header>
+
+      {/* Contextual Alerts */}
+      {showWeatherAlert && (
+        <section className="mb-4 mt-4">
+          <AlertCard
+            type="weather"
+            icon="🌧️"
+            headline="Rain Expected Tomorrow"
+            description="Pack an umbrella - showers forecasted for Dec 2-3 in Tokyo"
+            detail="Tokyo · Next 48 hours"
+            primaryAction={{
+              label: "View 7-Day Forecast",
+              onClick: () => console.log("View forecast")
+            }}
+            onDismiss={() => setShowWeatherAlert(false)}
+          />
+        </section>
+      )}
+
+      {showBudgetAlert && (
+        <section className="mb-4">
+          <AlertCard
+            type="budget"
+            icon="🎉"
+            headline="€150 Under Budget!"
+            description="You are doing great! Consider exploring more activities or upgrading your experience."
+            detail="Budget tracking · Updated today"
+            primaryAction={{
+              label: "Browse Activities",
+              onClick: () => console.log("Browse activities")
+            }}
+            onDismiss={() => setShowBudgetAlert(false)}
+          />
+        </section>
+      )}
 
       {/* Next Activity - Featured Card */}
       <section className="p-4">
