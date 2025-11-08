@@ -134,7 +134,8 @@ const Index = () => {
   }, {
     name: "Docs",
     icon: Wallet,
-    color: "text-success"
+    color: "text-success",
+    onClick: () => navigate('/documents')
   }];
   return <div className="min-h-screen bg-background pb-20">
       {/* Header */}
@@ -250,7 +251,7 @@ const Index = () => {
           <h2 className="text-lg font-semibold">Recommendations</h2>
         </div>
         <div className="grid grid-cols-3 gap-3 px-4">
-          {categories.map((category, index) => <button key={index} className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-card border border-border hover:bg-muted/50 transition-colors">
+          {categories.map((category, index) => <button key={index} onClick={category.onClick} className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-card border border-border hover:bg-muted/50 transition-colors">
               <div className={`p-3 rounded-xl bg-muted ${category.color}`}>
                 <category.icon className="h-5 w-5" />
               </div>
