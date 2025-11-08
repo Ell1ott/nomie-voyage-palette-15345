@@ -141,9 +141,12 @@ const Index = () => {
       <header className="sticky top-0 z-50 w-full bg-card border-b border-border">
         <div className="flex h-14 items-center justify-between px-4">
           <div className="flex items-center gap-3">
-            <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+            <button 
+              onClick={() => navigate('/profile')}
+              className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all"
+            >
               <img src={elliotAvatar} alt="Elliot" className="h-full w-full object-cover" />
-            </div>
+            </button>
             <div>
               <h1 className="text-sm font-semibold">Welcome to Japan, Elliot!</h1>
               <p className="text-xs text-muted-foreground">8 days to go</p>
