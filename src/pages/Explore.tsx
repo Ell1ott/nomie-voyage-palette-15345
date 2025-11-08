@@ -9,6 +9,7 @@ import tokyoSkytreeImage from "@/assets/tokyo-skytree.png";
 import shibuyaCrossingImage from "@/assets/shibuya-crossing-new.png";
 import ichiranRamenImage from "@/assets/ichiran-ramen-new.png";
 import tsukijiMarketImage from "@/assets/tsukiji-market.png";
+import meijiShrineImage from "@/assets/meiji-shrine.png";
 
 const Explore = () => {
   const navigate = useNavigate();
@@ -61,7 +62,7 @@ const Explore = () => {
       category: "Attraction" as const,
       rating: 4.9,
       reviewCount: "38k",
-      image: "⛩️"
+      image: meijiShrineImage
     }
   ];
 
