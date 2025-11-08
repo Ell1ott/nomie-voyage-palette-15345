@@ -149,7 +149,6 @@ const Index = () => {
             </button>
             <div>
               <h1 className="text-sm font-semibold">Welcome to Japan, Elliot!</h1>
-              <p className="text-xs text-muted-foreground">8 days to go</p>
             </div>
           </div>
           <div className="flex items-center gap-1">
