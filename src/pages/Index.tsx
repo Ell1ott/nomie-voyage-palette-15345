@@ -7,6 +7,7 @@ import { PlaceCard } from "@/components/PlaceCard";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Home, Compass, Calendar, MessageCircle, User, MapPin, Clock, Plane, Hotel, Utensils, Camera, Map, ChevronRight, Search, Bell, Wallet, Ticket } from "lucide-react";
+import sensojiImage from "@/assets/sensoji-temple.jpg";
 const Index = () => {
   const navigate = useNavigate();
   const [showWeatherAlert, setShowWeatherAlert] = useState(true);
@@ -170,8 +171,13 @@ const Index = () => {
       {/* Next Activity - Featured Card */}
       <section className="p-4">
         <div className="featured-card">
-          <div className="relative h-40 bg-gradient-to-br from-primary/20 via-secondary/20 to-warning/20 flex items-center justify-center">
-            <div className="text-6xl">🗾</div>
+          <div className="relative h-40 overflow-hidden">
+            <img 
+              src={sensojiImage} 
+              alt="Senso-ji Temple" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             <Badge variant="live" className="absolute top-3 right-3">
               <span className="mr-1">●</span> HAPPENING NOW
             </Badge>
