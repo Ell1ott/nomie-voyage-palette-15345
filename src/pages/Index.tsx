@@ -112,6 +112,10 @@ const Index = () => {
     icon: Utensils,
     color: "text-warning"
   }, {
+    name: "Phrases",
+    icon: MessageCircle,
+    color: "text-primary"
+  }, {
     name: "Hotels",
     icon: Hotel,
     color: "text-secondary"
