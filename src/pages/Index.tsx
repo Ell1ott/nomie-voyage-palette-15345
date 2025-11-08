@@ -342,10 +342,6 @@ const Index = () => {
             <Languages className="h-5 w-5" />
             <span className="text-[10px]">Language</span>
           </Button>
-          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-3 gap-1" onClick={() => navigate('/profile')}>
-            <User className="h-5 w-5" />
-            <span className="text-[10px]">Profile</span>
-          </Button>
         </div>
       </nav>
     </div>;
