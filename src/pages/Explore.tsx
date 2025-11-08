@@ -109,7 +109,7 @@ const Explore = () => {
           <Button
             variant={activeCategory === "food" ? "default" : "outline"}
             size="sm"
-            onClick={() => setActiveCategory("food")}
+            onClick={() => navigate('/food')}
             className="flex-shrink-0"
           >
             <Utensils className="h-4 w-4 mr-2" />
