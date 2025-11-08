@@ -12,6 +12,7 @@ import elliotAvatar from "@/assets/elliot-avatar.png";
 import sensojiPlaceImage from "@/assets/sensoji-place.jpg";
 import tokyoTripImage from "@/assets/tokyo-trip.jpg";
 import parisTripImage from "@/assets/paris-trip.jpg";
+import tokyoSkytreeImage from "@/assets/tokyo-skytree.png";
 const Index = () => {
   const navigate = useNavigate();
   const [showWeatherAlert, setShowWeatherAlert] = useState(true);
@@ -92,7 +93,7 @@ const Index = () => {
     category: "Attraction" as const,
     rating: 4.8,
     reviewCount: "45k",
-    image: "🗼"
+    image: tokyoSkytreeImage
   }, {
     name: "Shibuya Crossing",
     location: "Shibuya · Tokyo",
