@@ -7,7 +7,7 @@ import { PlaceCard } from "@/components/PlaceCard";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Home, Compass, Calendar, MessageCircle, User, MapPin, Clock, Plane, Hotel, Utensils, Camera, Map, ChevronRight, Search, Bell, Wallet, Ticket, Languages } from "lucide-react";
-import sensojiImage from "@/assets/sensoji-temple.jpg";
+import tokyoStreetImage from "@/assets/tokyo-street.png";
 import elliotAvatar from "@/assets/elliot-avatar.png";
 import sensojiPlaceImage from "@/assets/sensoji-place.jpg";
 import tokyoTripImage from "@/assets/tokyo-trip.jpg";
@@ -183,7 +183,7 @@ const Index = () => {
         <div className="featured-card">
           <div className="relative h-40 overflow-hidden">
             <img 
-              src={sensojiImage} 
+              src={tokyoStreetImage} 
               alt="Senso-ji Temple" 
               className="absolute inset-0 w-full h-full object-cover"
             />
