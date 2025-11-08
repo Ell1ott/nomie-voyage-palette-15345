@@ -235,7 +235,7 @@ const Transit = () => {
       {/* Primary Route Card */}
       <section className="px-4 mb-6">
         <Card className="border-2 border-primary relative">
-          <Badge className="absolute -top-2 right-4 bg-success">
+          <Badge className="absolute -top-2 right-4 bg-primary text-primary-foreground">
             RECOMMENDED
           </Badge>
           
