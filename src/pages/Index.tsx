@@ -14,6 +14,7 @@ import tokyoTripImage from "@/assets/tokyo-trip.jpg";
 import parisTripImage from "@/assets/paris-trip.jpg";
 import tokyoSkytreeImage from "@/assets/tokyo-skytree.png";
 import shibuyaCrossingImage from "@/assets/shibuya-crossing.png";
+import ichiranRamenImage from "@/assets/ichiran-ramen.png";
 const Index = () => {
   const navigate = useNavigate();
   const [showWeatherAlert, setShowWeatherAlert] = useState(true);
@@ -108,7 +109,7 @@ const Index = () => {
     category: "Restaurant" as const,
     rating: 4.9,
     reviewCount: "18k",
-    image: "🍜"
+    image: ichiranRamenImage
   }];
   const categories = [{
     name: "Attractions",
