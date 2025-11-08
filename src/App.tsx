@@ -7,6 +7,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { FloatingChat } from "@/components/FloatingChat";
 import Index from "./pages/Index";
 import Chat from "./pages/Chat";
+import AssistantChat from "./pages/AssistantChat";
 import FlightDetail from "./pages/FlightDetail";
 import Explore from "./pages/Explore";
 import Phrases from "./pages/Phrases";
@@ -28,6 +29,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/chat" element={<Chat />} />
+          <Route path="/assistant" element={<AssistantChat />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/phrases" element={<Phrases />} />
           <Route path="/documents" element={<Documents />} />
