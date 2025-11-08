@@ -13,6 +13,7 @@ import sensojiPlaceImage from "@/assets/sensoji-place.jpg";
 import tokyoTripImage from "@/assets/tokyo-trip.jpg";
 import parisTripImage from "@/assets/paris-trip.jpg";
 import tokyoSkytreeImage from "@/assets/tokyo-skytree.png";
+import shibuyaCrossingImage from "@/assets/shibuya-crossing.png";
 const Index = () => {
   const navigate = useNavigate();
   const [showWeatherAlert, setShowWeatherAlert] = useState(true);
@@ -100,7 +101,7 @@ const Index = () => {
     category: "Attraction" as const,
     rating: 4.7,
     reviewCount: "32k",
-    image: "🚶"
+    image: shibuyaCrossingImage
   }, {
     name: "Ichiran Ramen",
     location: "Shibuya · Tokyo",
