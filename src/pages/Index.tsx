@@ -11,6 +11,7 @@ import sensojiImage from "@/assets/sensoji-temple.jpg";
 import elliotAvatar from "@/assets/elliot-avatar.png";
 import sensojiPlaceImage from "@/assets/sensoji-place.jpg";
 import tokyoTripImage from "@/assets/tokyo-trip.jpg";
+import parisTripImage from "@/assets/paris-trip.jpg";
 const Index = () => {
   const navigate = useNavigate();
   const [showWeatherAlert, setShowWeatherAlert] = useState(true);
@@ -26,7 +27,7 @@ const Index = () => {
     destination: "Paris, France",
     date: "Jan 10-17, 2025",
     status: "Planning",
-    image: "🗼",
+    image: parisTripImage,
     daysUntil: 34,
     activities: 8
   }];
