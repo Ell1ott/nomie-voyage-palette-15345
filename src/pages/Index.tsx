@@ -258,9 +258,9 @@ const Index = () => {
           />
           <QuickActionButton
             icon={<Wallet className="h-7 w-7" />}
-            label="Budget"
+            label="Docs"
             color="text-success"
-            onClick={() => console.log('Budget')}
+            onClick={() => console.log('Docs')}
           />
           <QuickActionButton
             icon={<Compass className="h-7 w-7" />}
