@@ -157,8 +157,7 @@ const Documents = () => {
   const quickActions = [
     { icon: FileText, label: "Apply for Visa", color: "text-primary" },
     { icon: Camera, label: "Scan Passport", color: "text-primary" },
-    { icon: Shield, label: "Add Insurance", color: "text-primary" },
-    { icon: Phone, label: "Emergency Contacts", color: "text-destructive" }
+    { icon: Shield, label: "Add Insurance", color: "text-primary" }
   ];
 
   const handleDocumentClick = (doc: Document) => {
