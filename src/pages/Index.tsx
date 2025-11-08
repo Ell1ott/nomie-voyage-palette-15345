@@ -126,33 +126,75 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Next Activity - Featured Card */}
-      <section className="p-4">
-        <div className="featured-card">
-          <div className="relative h-40 bg-gradient-to-br from-primary/20 via-secondary/20 to-warning/20 flex items-center justify-center">
-            <div className="text-6xl">🗾</div>
-            <Badge variant="live" className="absolute top-3 right-3">
-              <span className="mr-1">●</span> HAPPENING NOW
-            </Badge>
-          </div>
-          <div className="p-4">
-            <div className="flex items-start justify-between mb-2">
-              <div className="flex-1">
-                <h3 className="text-lg font-semibold mb-1">Visit Senso-ji Temple</h3>
-                <div className="flex items-center text-sm text-muted-foreground gap-3">
-                  <span className="flex items-center gap-1">
-                    <Clock className="h-3.5 w-3.5" />
-                    09:00 - 11:00
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <MapPin className="h-3.5 w-3.5" />
-                    Asakusa
-                  </span>
+      {/* Next Flight - Large Featured Card */}
+      <section className="px-4 pt-4 pb-6">
+        <h2 className="text-lg font-semibold mb-3">Next Up</h2>
+        <div className="relative rounded-2xl overflow-hidden" style={{ boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)' }}>
+          {/* Background with gradient overlay */}
+          <div className="relative aspect-video bg-gradient-to-br from-primary via-secondary/80 to-warning">
+            {/* Dark gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+            
+            {/* Decorative airplane emoji as background */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-20">
+              <span className="text-9xl">✈️</span>
+            </div>
+
+            {/* Content overlay */}
+            <div className="relative h-full p-5 flex flex-col justify-between">
+              {/* Top section */}
+              <div className="flex items-start justify-between">
+                {/* Airline logo */}
+                <div className="w-6 h-6 rounded bg-white/90 flex items-center justify-center">
+                  <Plane className="h-4 w-4 text-primary" />
+                </div>
+                
+                {/* Status badge */}
+                <Badge className="bg-primary text-white font-bold text-xs px-3 py-1.5 rounded-xl">
+                  Boarding in 2h
+                </Badge>
+              </div>
+
+              {/* Bottom section - Flight details */}
+              <div className="space-y-2">
+                {/* On Time status */}
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2 h-2 rounded-full bg-success" />
+                  <span className="text-white/90 text-sm font-medium">On Time</span>
+                </div>
+
+                {/* Flight route */}
+                <div className="space-y-1">
+                  <h3 className="text-white font-bold text-[22px] leading-tight">
+                    Copenhagen → Tokyo
+                  </h3>
+                  <p className="text-white/70 text-sm font-medium">
+                    CPH → HND
+                  </p>
+                </div>
+
+                {/* Time and location info */}
+                <div className="flex items-center gap-4 pt-1">
+                  <div className="flex items-center gap-1.5 text-white">
+                    <Clock className="h-4 w-4" />
+                    <span className="text-base font-medium">Today, 14:30</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-1.5 text-white/80">
+                  <MapPin className="h-4 w-4" />
+                  <span className="text-sm">Terminal 3, Gate B12</span>
+                </div>
+
+                {/* Action button */}
+                <div className="pt-2">
+                  <Button 
+                    variant="outline" 
+                    className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary h-10 px-6 font-semibold"
+                  >
+                    View Boarding Pass
+                  </Button>
                 </div>
               </div>
-              <Button size="sm">
-                Navigate
-              </Button>
             </div>
           </div>
         </div>
