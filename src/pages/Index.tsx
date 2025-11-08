@@ -146,9 +146,9 @@ const Index = () => {
     { name: "Attractions", icon: Camera, color: "text-primary" },
     { name: "Food", icon: Utensils, color: "text-warning" },
     { name: "Hotels", icon: Hotel, color: "text-secondary" },
-    { name: "Phrases", icon: MessageCircle, color: "text-primary" },
     { name: "Flights", icon: Plane, color: "text-success" },
-    { name: "Docs", icon: Wallet, color: "text-success" }
+    { name: "Docs", icon: Wallet, color: "text-success" },
+    { name: "Phrases", icon: MessageCircle, color: "text-primary" }
   ];
 
   return (
@@ -310,7 +310,7 @@ const Index = () => {
         <div className="px-4 mb-3">
           <h2 className="text-lg font-semibold">Explore</h2>
         </div>
-        <div className="grid grid-cols-4 gap-3 px-4">
+        <div className="grid grid-cols-3 gap-3 px-4">
           {categories.map((category, index) => (
             <button
               key={index}
