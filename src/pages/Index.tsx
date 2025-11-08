@@ -185,9 +185,6 @@ const Index = () => {
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-            <Badge variant="live" className="absolute top-3 right-3">
-              <span className="mr-1">●</span> HAPPENING NOW
-            </Badge>
           </div>
           <div className="p-4">
             <div className="flex items-start justify-between mb-2">
