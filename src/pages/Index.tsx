@@ -75,34 +75,32 @@ const Index = () => {
     location: "Tokyo Station"
   }];
   const places = [{
-    name: "The Golden Bridge",
-    location: "Hoi An · Da Nang",
-    category: "Attraction" as const,
-    rating: 5.0,
-    reviewCount: "12k",
-    image: "🌉",
-    discount: "-63%"
-  }, {
-    name: "Naman Retreat Resort",
-    location: "Da Nang",
-    category: "Hotel" as const,
-    rating: 4.9,
-    reviewCount: "8.5k",
-    image: "🏖️",
-    available: true
-  }, {
     name: "Senso-ji Temple",
     location: "Asakusa · Tokyo",
     category: "Attraction" as const,
-    rating: 4.8,
-    reviewCount: "15k",
+    rating: 4.9,
+    reviewCount: "28k",
     image: "⛩️"
   }, {
-    name: "Tsukiji Market",
-    location: "Tsukiji · Tokyo",
-    category: "Restaurant" as const,
+    name: "Tokyo Skytree",
+    location: "Sumida · Tokyo",
+    category: "Attraction" as const,
+    rating: 4.8,
+    reviewCount: "45k",
+    image: "🗼"
+  }, {
+    name: "Shibuya Crossing",
+    location: "Shibuya · Tokyo",
+    category: "Attraction" as const,
     rating: 4.7,
-    reviewCount: "9k",
+    reviewCount: "32k",
+    image: "🚶"
+  }, {
+    name: "Ichiran Ramen",
+    location: "Shibuya · Tokyo",
+    category: "Restaurant" as const,
+    rating: 4.9,
+    reviewCount: "18k",
     image: "🍜"
   }];
   const categories = [{
@@ -248,7 +246,7 @@ const Index = () => {
         <div className="px-4 mb-3">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-lg font-semibold">Discover Copenhagen</h2>
+              <h2 className="text-lg font-semibold">Discover Tokyo</h2>
               <p className="text-sm text-muted-foreground">Popular Places</p>
             </div>
             <Button variant="ghost" size="sm" className="text-primary">
