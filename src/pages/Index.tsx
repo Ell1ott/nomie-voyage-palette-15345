@@ -18,7 +18,6 @@ import ichiranRamenImage from "@/assets/ichiran-ramen.png";
 const Index = () => {
   const navigate = useNavigate();
   const [showWeatherAlert, setShowWeatherAlert] = useState(true);
-  const [showBudgetAlert, setShowBudgetAlert] = useState(true);
   const upcomingTrips = [{
     destination: "Tokyo, Japan",
     date: "Dec 15-22, 2024",
@@ -171,12 +170,6 @@ const Index = () => {
       }} onDismiss={() => setShowWeatherAlert(false)} />
         </section>}
 
-      {showBudgetAlert && <section className="mb-4">
-          <AlertCard type="budget" icon="🎉" headline="€150 Under Budget!" description="You are doing great! Consider exploring more activities or upgrading your experience." detail="Budget tracking · Updated today" primaryAction={{
-        label: "Browse Activities",
-        onClick: () => console.log("Browse activities")
-      }} onDismiss={() => setShowBudgetAlert(false)} />
-        </section>}
 
       {/* Next Activity - Featured Card */}
       <section className="p-4">
