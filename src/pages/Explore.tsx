@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft, MapPin, Utensils, Camera, Filter, Search } from "lucide-react";
 import sensojiPlaceImage from "@/assets/sensoji-place.jpg";
 import tokyoSkytreeImage from "@/assets/tokyo-skytree.png";
+import shibuyaCrossingImage from "@/assets/shibuya-crossing-new.png";
 
 const Explore = () => {
   const navigate = useNavigate();
@@ -34,7 +35,7 @@ const Explore = () => {
       category: "Attraction" as const,
       rating: 4.7,
       reviewCount: "32k",
-      image: "🚶"
+      image: shibuyaCrossingImage
     },
     {
       name: "Ichiran Ramen",
