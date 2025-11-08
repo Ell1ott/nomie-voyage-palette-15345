@@ -10,6 +10,7 @@ import Explore from "./pages/Explore";
 import Phrases from "./pages/Phrases";
 import Documents from "./pages/Documents";
 import Transit from "./pages/Transit";
+import Food from "./pages/Food";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/phrases" element={<Phrases />} />
           <Route path="/documents" element={<Documents />} />
           <Route path="/transit" element={<Transit />} />
+          <Route path="/food" element={<Food />} />
           <Route path="/flight/:id" element={<FlightDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
