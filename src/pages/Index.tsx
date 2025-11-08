@@ -1,166 +1,331 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Compass, Sparkles, MapPin, MessageCircle, Search, Bell, User } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { 
+  Home, 
+  Compass, 
+  Calendar, 
+  MessageCircle, 
+  User,
+  MapPin,
+  Clock,
+  Plane,
+  Hotel,
+  Utensils,
+  Camera,
+  Map,
+  ChevronRight,
+  Search,
+  Bell
+} from "lucide-react";
 
 const Index = () => {
-  const features = [
+  const upcomingTrips = [
     {
-      icon: Compass,
-      title: "Smart Trip Planning",
-      description: "AI-powered itineraries tailored to your interests and travel style",
+      destination: "Tokyo, Japan",
+      date: "Dec 15-22, 2024",
+      status: "Going",
+      image: "🗾",
+      daysUntil: 8,
+      activities: 12
     },
     {
-      icon: Sparkles,
-      title: "Local Insider Tips",
-      description: "Discover hidden gems and authentic local experiences",
-    },
-    {
-      icon: MapPin,
-      title: "Real-Time Guidance",
-      description: "Personalized recommendations wherever you go",
-    },
-    {
-      icon: MessageCircle,
-      title: "24/7 Travel Buddy",
-      description: "Always here to help make your trip amazing",
-    },
+      destination: "Paris, France",
+      date: "Jan 10-17, 2025",
+      status: "Planning",
+      image: "🗼",
+      daysUntil: 34,
+      activities: 8
+    }
   ];
 
-  const destinations = [
-    { name: "Paris", tag: "Romantic", image: "🗼" },
-    { name: "Tokyo", tag: "Culture", image: "🗾" },
-    { name: "Bali", tag: "Beach", image: "🏖️" },
-    { name: "Iceland", tag: "Adventure", image: "🏔️" },
+  const todayItinerary = [
+    {
+      time: "09:00",
+      title: "Visit Senso-ji Temple",
+      location: "Asakusa, Tokyo",
+      type: "attraction",
+      icon: Camera,
+      live: true
+    },
+    {
+      time: "12:30",
+      title: "Lunch at Tsukiji Market",
+      location: "Tsukiji, Tokyo",
+      type: "food",
+      icon: Utensils
+    },
+    {
+      time: "15:00",
+      title: "Explore Shibuya Crossing",
+      location: "Shibuya, Tokyo",
+      type: "attraction",
+      icon: Map
+    },
+    {
+      time: "18:30",
+      title: "Dinner Reservation",
+      location: "Shinjuku, Tokyo",
+      type: "food",
+      icon: Utensils
+    }
+  ];
+
+  const recommendations = [
+    {
+      title: "Golden Pavilion",
+      location: "Kyoto",
+      category: "Temple",
+      rating: 4.8,
+      image: "⛩️"
+    },
+    {
+      title: "Naman Retreat",
+      location: "Da Nang",
+      category: "Resort",
+      rating: 5.0,
+      image: "🏖️"
+    },
+    {
+      title: "Halong Bay Cruise",
+      location: "Vietnam",
+      category: "Experience",
+      rating: 4.9,
+      image: "⛵"
+    }
+  ];
+
+  const categories = [
+    { name: "Attractions", icon: Camera, color: "text-primary" },
+    { name: "Food", icon: Utensils, color: "text-warning" },
+    { name: "Hotels", icon: Hotel, color: "text-secondary" },
+    { name: "Flights", icon: Plane, color: "text-success" }
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
-        <div className="max-w-7xl mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
+      <header className="sticky top-0 z-50 w-full bg-card border-b border-border">
+        <div className="flex h-14 items-center justify-between px-4">
           <div className="flex items-center gap-3">
-            <div className="text-2xl">✈️</div>
-            <h1 className="text-xl font-bold">Nomie</h1>
+            <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+              <span className="text-lg">✈️</span>
+            </div>
+            <div>
+              <h1 className="text-base font-semibold">Tokyo Trip</h1>
+              <p className="text-xs text-muted-foreground">8 days to go</p>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <Button variant="ghost" size="icon">
               <Search className="h-5 w-5" />
             </Button>
             <Button variant="ghost" size="icon">
               <Bell className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" />
-            </Button>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="px-4 sm:px-6 py-12 lg:py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-              Your AI Travel Companion
-            </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Planning trips has never been easier. Let Nomie handle the details while you dream about the adventure.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <Button size="lg">
-                Start Planning
-              </Button>
-              <Button size="lg" variant="outline">
-                Explore Features
+      {/* Next Activity - Featured Card */}
+      <section className="p-4">
+        <div className="featured-card">
+          <div className="relative h-40 bg-gradient-to-br from-primary/20 via-secondary/20 to-warning/20 flex items-center justify-center">
+            <div className="text-6xl">🗾</div>
+            <Badge variant="live" className="absolute top-3 right-3">
+              <span className="mr-1">●</span> HAPPENING NOW
+            </Badge>
+          </div>
+          <div className="p-4">
+            <div className="flex items-start justify-between mb-2">
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold mb-1">Visit Senso-ji Temple</h3>
+                <div className="flex items-center text-sm text-muted-foreground gap-3">
+                  <span className="flex items-center gap-1">
+                    <Clock className="h-3.5 w-3.5" />
+                    09:00 - 11:00
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <MapPin className="h-3.5 w-3.5" />
+                    Asakusa
+                  </span>
+                </div>
+              </div>
+              <Button size="sm">
+                Navigate
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Popular Destinations */}
-      <section className="px-4 sm:px-6 py-12 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-2xl font-bold text-foreground">Popular Destinations</h3>
-            <Button variant="ghost" className="text-primary">View All</Button>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {destinations.map((dest, index) => (
-              <Card key={index} className="card-elevated p-6 hover:scale-[1.02] transition-transform cursor-pointer">
-                <div className="text-center">
-                  <div className="text-5xl mb-3">{dest.image}</div>
-                  <h4 className="font-semibold text-foreground mb-1">{dest.name}</h4>
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                    {dest.tag}
-                  </span>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="px-4 sm:px-6 py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Everything You Need
-            </h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From planning to exploring, we've got you covered
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="card-elevated p-8 hover:scale-[1.02] transition-all group"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <feature.icon className="h-6 w-6" />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-xl font-semibold text-foreground mb-2">
-                      {feature.title}
-                    </h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="px-4 sm:px-6 py-16 bg-gradient-to-br from-primary to-accent">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Ready to start your adventure?
-          </h3>
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Join thousands of travelers who've discovered stress-free trip planning with Nomie
-          </p>
-          <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-lg">
-            Get Started Now
+      {/* Today's Itinerary */}
+      <section className="mb-6">
+        <div className="flex items-center justify-between px-4 mb-3">
+          <h2 className="text-lg font-semibold">Today's Itinerary</h2>
+          <Button variant="ghost" size="sm" className="text-primary">
+            View All
+            <ChevronRight className="h-4 w-4 ml-1" />
           </Button>
         </div>
+        <div className="bg-card">
+          {todayItinerary.map((item, index) => (
+            <div key={index} className="list-item">
+              <div className="flex items-start gap-3">
+                <div className="flex flex-col items-center">
+                  <div className="text-xs font-medium text-muted-foreground min-w-[40px]">
+                    {item.time}
+                  </div>
+                  {index < todayItinerary.length - 1 && (
+                    <div className="w-px h-12 bg-border mt-2" />
+                  )}
+                </div>
+                <div className={`p-2 rounded-xl ${
+                  item.type === 'food' ? 'bg-warning/10' : 'bg-secondary/10'
+                } mt-0.5`}>
+                  <item.icon className="h-4 w-4" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-sm font-medium mb-1 flex items-center gap-2">
+                        {item.title}
+                        {item.live && <Badge variant="live" className="text-[10px] px-2 py-0">LIVE</Badge>}
+                      </h4>
+                      <p className="text-xs text-muted-foreground flex items-center gap-1">
+                        <MapPin className="h-3 w-3" />
+                        {item.location}
+                      </p>
+                    </div>
+                    <ChevronRight className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t py-8 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-sm text-muted-foreground">
-            Made with ❤️ for curious travelers everywhere
-          </p>
+      {/* Categories */}
+      <section className="mb-6">
+        <div className="px-4 mb-3">
+          <h2 className="text-lg font-semibold">Explore</h2>
         </div>
-      </footer>
+        <div className="grid grid-cols-4 gap-3 px-4">
+          {categories.map((category, index) => (
+            <button
+              key={index}
+              className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-card border border-border hover:bg-muted/50 transition-colors"
+            >
+              <div className={`p-3 rounded-xl bg-muted ${category.color}`}>
+                <category.icon className="h-5 w-5" />
+              </div>
+              <span className="text-xs font-medium">{category.name}</span>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* Recommendations */}
+      <section className="mb-6">
+        <div className="flex items-center justify-between px-4 mb-3">
+          <h2 className="text-lg font-semibold">Recommended for You</h2>
+          <Button variant="ghost" size="sm" className="text-primary">
+            View All
+            <ChevronRight className="h-4 w-4 ml-1" />
+          </Button>
+        </div>
+        <div className="flex gap-3 px-4 overflow-x-auto scrollbar-hide">
+          {recommendations.map((rec, index) => (
+            <div key={index} className="featured-card min-w-[240px]">
+              <div className="relative h-32 bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
+                <div className="text-5xl">{rec.image}</div>
+              </div>
+              <div className="p-3">
+                <div className="flex items-start justify-between mb-1">
+                  <h4 className="text-sm font-semibold flex-1">{rec.title}</h4>
+                  <div className="flex items-center gap-1 text-xs font-medium">
+                    <span className="text-warning">★</span>
+                    <span>{rec.rating}</span>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground flex items-center gap-1">
+                  <MapPin className="h-3 w-3" />
+                  {rec.location}
+                </p>
+                <Badge variant="outline" className="mt-2 text-[10px] px-2 py-0.5">
+                  {rec.category}
+                </Badge>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Upcoming Trips */}
+      <section className="mb-6">
+        <div className="flex items-center justify-between px-4 mb-3">
+          <h2 className="text-lg font-semibold">Upcoming Trips</h2>
+          <Button variant="ghost" size="sm" className="text-primary">
+            View All
+            <ChevronRight className="h-4 w-4 ml-1" />
+          </Button>
+        </div>
+        <div className="bg-card">
+          {upcomingTrips.map((trip, index) => (
+            <div key={index} className="list-item">
+              <div className="flex items-center gap-3">
+                <div className="text-4xl">{trip.image}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-2 mb-1">
+                    <h4 className="text-sm font-semibold">{trip.destination}</h4>
+                    <Badge variant={trip.status === 'Going' ? 'success' : 'default'} className="text-[10px] px-2 py-0.5">
+                      {trip.status}
+                    </Badge>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-1.5">{trip.date}</p>
+                  <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="h-3 w-3" />
+                      {trip.daysUntil} days
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Compass className="h-3 w-3" />
+                      {trip.activities} activities
+                    </span>
+                  </div>
+                </div>
+                <ChevronRight className="h-4 w-4 text-muted-foreground" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Bottom Navigation */}
+      <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card border-t border-border">
+        <div className="flex items-center justify-around h-16 px-2">
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
+            <Home className="h-5 w-5 text-primary" />
+            <span className="text-[10px] font-medium mt-1 text-primary">Home</span>
+          </Button>
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
+            <Compass className="h-5 w-5" />
+            <span className="text-[10px] mt-1">Discover</span>
+          </Button>
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
+            <Calendar className="h-5 w-5" />
+            <span className="text-[10px] mt-1">Trips</span>
+          </Button>
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
+            <MessageCircle className="h-5 w-5" />
+            <span className="text-[10px] mt-1">Chat</span>
+          </Button>
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
+            <User className="h-5 w-5" />
+            <span className="text-[10px] mt-1">Profile</span>
+          </Button>
+        </div>
+      </nav>
     </div>
   );
 };

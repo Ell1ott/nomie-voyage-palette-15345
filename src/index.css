@@ -8,58 +8,68 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Nomie Travel Colors - Refined & Modern */
-    --background: 0 0% 99%;
-    --foreground: 220 15% 15%;
+    /* Nomie PWA Colors - Clean & Context-Aware */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
+    --card-foreground: 0 0% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
+    --popover-foreground: 0 0% 20%;
 
-    /* Primary: Warm Coral - refined warmth */
-    --primary: 14 90% 60%;
+    /* Primary: Warm Coral - CTAs and highlights */
+    --primary: 0 100% 71%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary: Soft Sky - calm professionalism */
-    --secondary: 200 25% 92%;
-    --secondary-foreground: 220 15% 15%;
+    /* Secondary: Sky Blue - informational elements */
+    --secondary: 174 62% 59%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Accent: Soft Orange - friendly highlight */
-    --accent: 30 85% 65%;
+    /* Success: Mint Green - confirmations */
+    --success: 122 39% 64%;
+    --success-foreground: 0 0% 20%;
+
+    /* Warning: Soft Amber - alerts */
+    --warning: 35 100% 64%;
+    --warning-foreground: 0 0% 20%;
+
+    /* Accent: Same as secondary */
+    --accent: 174 62% 59%;
     --accent-foreground: 0 0% 100%;
 
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 60%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 94%;
-    --ring: 14 90% 60%;
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 0 100% 71%;
 
-    --radius: 1.25rem;
+    --radius: 1rem;
 
     /* Nomie Custom Design Tokens */
-    --gradient-subtle: linear-gradient(135deg, hsl(14, 90%, 60%) 0%, hsl(30, 85%, 65%) 100%);
-    --gradient-soft: linear-gradient(180deg, hsl(0, 0%, 99%) 0%, hsl(220, 20%, 97%) 100%);
+    --text-primary: 0 0% 20%;
+    --text-secondary: 0 0% 40%;
+    --text-tertiary: 0 0% 60%;
     
-    --shadow-card: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
-    --shadow-elevated: 0 8px 24px -4px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-elevated: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     
     --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 220 30% 10%;
+    --background: 0 0% 10%;
     --foreground: 0 0% 98%;
 
-    --card: 220 25% 15%;
+    --card: 0 0% 15%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 220 25% 15%;
+    --popover: 0 0% 15%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 100% 71%;
@@ -68,18 +78,28 @@ All colors MUST be HSL.
     --secondary: 174 62% 59%;
     --secondary-foreground: 0 0% 100%;
 
-    --accent: 35 100% 64%;
+    --success: 122 39% 64%;
+    --success-foreground: 0 0% 20%;
+
+    --warning: 35 100% 64%;
+    --warning-foreground: 0 0% 20%;
+
+    --accent: 174 62% 59%;
     --accent-foreground: 0 0% 100%;
 
-    --muted: 220 20% 20%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 25%;
-    --input: 220 20% 25%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
     --ring: 0 100% 71%;
+
+    --text-primary: 0 0% 98%;
+    --text-secondary: 0 0% 70%;
+    --text-tertiary: 0 0% 50%;
   }
 }
 
@@ -95,19 +115,41 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .card-elevated {
-    background: hsl(var(--card));
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-card);
-    border: 1px solid hsl(var(--border));
+  .list-item {
+    @apply bg-card border-b border-border p-4 transition-colors hover:bg-muted/50;
   }
 
-  .card-elevated:hover {
+  .featured-card {
+    @apply bg-card rounded-2xl overflow-hidden transition-shadow;
+    box-shadow: var(--shadow-card);
+  }
+
+  .featured-card:hover {
     box-shadow: var(--shadow-elevated);
   }
 
-  .dark .card-elevated {
-    background: hsl(var(--card));
-    border: 1px solid hsl(var(--border));
+  .status-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-success {
+    @apply bg-success/20 text-success-foreground;
+  }
+
+  .badge-live {
+    @apply bg-primary/20 text-primary;
+  }
+
+  .badge-warning {
+    @apply bg-warning/20 text-warning-foreground;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
