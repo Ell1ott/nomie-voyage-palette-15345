@@ -11,6 +11,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import AnimatedGlobePlane from "@/components/AnimatedGlobePlane";
 
 const FlightDetail = () => {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ const FlightDetail = () => {
       {/* Hero Section */}
       <div className="relative h-40 bg-gradient-to-br from-secondary/30 via-primary/20 to-warning/20 rounded-b-2xl overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-6xl">✈️</div>
+          <AnimatedGlobePlane />
         </div>
         {/* Status Badge */}
         <div className="absolute top-3 right-3">
