@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
         name: "Nomie - Your AI Travel Companion",
         short_name: "Nomie",
         description: "Meet Nomie, your proactive AI travel companion that helps you discover and explore the world with personalized recommendations.",
-        theme_color: "#0EA5E9",
+        theme_color: "#FFFFFF",
         background_color: "#ffffff",
         display: "standalone",
         orientation: "portrait-primary",
