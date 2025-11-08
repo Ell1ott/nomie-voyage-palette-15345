@@ -54,7 +54,7 @@ const FlightDetail = () => {
       </div>
 
       {/* Primary Info Card */}
-      <div className="px-4 -mt-6">
+      <div className="px-4 mt-4">
         <div className="bg-card rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-5">
           {/* Airline Info */}
           <div className="flex items-center gap-2.5 mb-5">
