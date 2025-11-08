@@ -8,6 +8,7 @@ import sensojiPlaceImage from "@/assets/sensoji-place.jpg";
 import tokyoSkytreeImage from "@/assets/tokyo-skytree.png";
 import shibuyaCrossingImage from "@/assets/shibuya-crossing-new.png";
 import ichiranRamenImage from "@/assets/ichiran-ramen-new.png";
+import tsukijiMarketImage from "@/assets/tsukiji-market.png";
 
 const Explore = () => {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ const Explore = () => {
       category: "Restaurant" as const,
       rating: 4.8,
       reviewCount: "22k",
-      image: "🍱"
+      image: tsukijiMarketImage
     },
     {
       name: "Meiji Shrine",
