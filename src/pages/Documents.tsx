@@ -157,8 +157,7 @@ const Documents = () => {
   const quickActions = [
     { icon: FileText, label: "Apply for Visa", color: "text-primary" },
     { icon: Camera, label: "Scan Passport", color: "text-primary" },
-    { icon: Shield, label: "Add Insurance", color: "text-primary" },
-    { icon: Phone, label: "Emergency Contacts", color: "text-destructive" }
+    { icon: Shield, label: "Add Insurance", color: "text-primary" }
   ];
 
   const handleDocumentClick = (doc: Document) => {
@@ -190,41 +189,8 @@ const Documents = () => {
         </div>
       </header>
 
-      {/* Hero Status Card */}
-      <section className="p-4">
-        <Card className={`${currentStatus.gradient} border-0 overflow-hidden`}>
-          <div className="p-6 min-h-[140px] flex flex-col justify-between">
-            <div className="flex items-start gap-4">
-              {currentStatus.icon}
-              <div className="flex-1">
-                <h2 className="text-[22px] font-bold text-white mb-2">
-                  {currentStatus.headline}
-                </h2>
-                <p className="text-[15px] text-white/90 mb-3">
-                  {currentStatus.subtext}
-                </p>
-                <div className="flex items-center gap-2 text-white/90">
-                  <Calendar className="h-4 w-4" />
-                  <span className="text-sm font-medium">Departing in 8 days</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Card>
-      </section>
-
-      {/* Reminders Toggle */}
-      <section className="px-4 mb-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-medium">Smart Reminders</span>
-          </div>
-          <Switch checked={remindersEnabled} onCheckedChange={setRemindersEnabled} />
-        </div>
-      </section>
-
       {/* Required Documents */}
-      <section className="px-4 mb-6">
+      <section className="px-4 pt-4 mb-6">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-base font-semibold">Required Documents</h3>
           <div className="flex items-center gap-1 text-xs text-muted-foreground">

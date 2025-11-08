@@ -8,7 +8,7 @@ import { RecommendationsSection } from "@/components/RecommendationsSection";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Home, Compass, Calendar, MessageCircle, User, MapPin, Clock, Plane, Hotel, Utensils, Camera, Map, ChevronRight, Search, Bell, Wallet, Ticket, Languages } from "lucide-react";
-import sensojiImage from "@/assets/sensoji-temple.jpg";
+import tokyoCityscapeImage from "@/assets/tokyo-cityscape.jpg";
 import elliotAvatar from "@/assets/elliot-avatar.png";
 import sensojiPlaceImage from "@/assets/sensoji-place.jpg";
 import tokyoTripImage from "@/assets/tokyo-trip.jpg";
@@ -19,7 +19,6 @@ import ichiranRamenImage from "@/assets/ichiran-ramen.png";
 const Index = () => {
   const navigate = useNavigate();
   const [showWeatherAlert, setShowWeatherAlert] = useState(true);
-  const [showBudgetAlert, setShowBudgetAlert] = useState(true);
   const upcomingTrips = [{
     destination: "Tokyo, Japan",
     date: "Dec 15-22, 2024",
@@ -46,6 +45,24 @@ const Index = () => {
     location: "Copenhagen Airport",
     isNext24Hours: true
   }, {
+    thumbnail: "🚄",
+    status: "pending" as const,
+    category: "Transport",
+    categoryIcon: <Plane className="h-3 w-3" />,
+    title: "Shinkansen to Kyoto",
+    date: "17 Dec",
+    time: "08:00",
+    location: "Tokyo Station"
+  }, {
+    thumbnail: "🍜",
+    status: "booked" as const,
+    category: "Restaurant",
+    categoryIcon: <Utensils className="h-3 w-3" />,
+    title: "Lunch at Tsukiji Market",
+    date: "15 Dec",
+    time: "12:30",
+    location: "Tsukiji, Tokyo"
+  }, {
     thumbnail: "🏨",
     status: "booked" as const,
     category: "Hotel",
@@ -64,24 +81,6 @@ const Index = () => {
     time: "09:00",
     location: "Asakusa, Tokyo",
     isLive: true
-  }, {
-    thumbnail: "🍜",
-    status: "booked" as const,
-    category: "Restaurant",
-    categoryIcon: <Utensils className="h-3 w-3" />,
-    title: "Lunch at Tsukiji Market",
-    date: "15 Dec",
-    time: "12:30",
-    location: "Tsukiji, Tokyo"
-  }, {
-    thumbnail: "🚄",
-    status: "pending" as const,
-    category: "Transport",
-    categoryIcon: <Plane className="h-3 w-3" />,
-    title: "Shinkansen to Kyoto",
-    date: "17 Dec",
-    time: "08:00",
-    location: "Tokyo Station"
   }];
   const places = [{
     name: "Senso-ji Temple",
@@ -121,8 +120,8 @@ const Index = () => {
     icon: Utensils,
     color: "text-warning"
   }, {
-    name: "Phrases",
-    icon: MessageCircle,
+    name: "Language",
+    icon: Languages,
     color: "text-primary"
   }, {
     name: "Hotels",
@@ -135,7 +134,8 @@ const Index = () => {
   }, {
     name: "Docs",
     icon: Wallet,
-    color: "text-success"
+    color: "text-success",
+    onClick: () => navigate('/documents')
   }];
   return <div className="min-h-screen bg-background pb-20">
       {/* Header */}
@@ -171,12 +171,6 @@ const Index = () => {
       }} onDismiss={() => setShowWeatherAlert(false)} />
         </section>}
 
-      {showBudgetAlert && <section className="mb-4">
-          <AlertCard type="budget" icon="🎉" headline="€150 Under Budget!" description="You are doing great! Consider exploring more activities or upgrading your experience." detail="Budget tracking · Updated today" primaryAction={{
-        label: "Browse Activities",
-        onClick: () => console.log("Browse activities")
-      }} onDismiss={() => setShowBudgetAlert(false)} />
-        </section>}
 
       {/* Personalized Recommendations */}
       <section className="px-4">
@@ -188,8 +182,8 @@ const Index = () => {
         <div className="featured-card">
           <div className="relative h-40 overflow-hidden">
             <img 
-              src={sensojiImage} 
-              alt="Senso-ji Temple" 
+              src={tokyoCityscapeImage} 
+              alt="Tokyo Transport" 
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -197,19 +191,19 @@ const Index = () => {
           <div className="p-4">
             <div className="flex items-start justify-between mb-2">
               <div className="flex-1">
-                <h3 className="text-lg font-semibold mb-1">Visit Senso-ji Temple</h3>
+                <h3 className="text-lg font-semibold mb-1">Airport to Downtown Tokyo</h3>
                 <div className="flex items-center text-sm text-muted-foreground gap-3">
                   <span className="flex items-center gap-1">
                     <Clock className="h-3.5 w-3.5" />
-                    09:00 - 11:00
+                    13 Nov, 16:30
                   </span>
                   <span className="flex items-center gap-1">
                     <MapPin className="h-3.5 w-3.5" />
-                    Asakusa
+                    Narita Airport
                   </span>
                 </div>
               </div>
-              <Button size="sm">
+              <Button size="sm" onClick={() => navigate('/transit')}>
                 Navigate
               </Button>
             </div>
@@ -256,7 +250,7 @@ const Index = () => {
           <h2 className="text-lg font-semibold">Recommendations</h2>
         </div>
         <div className="grid grid-cols-3 gap-3 px-4">
-          {categories.map((category, index) => <button key={index} className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-card border border-border hover:bg-muted/50 transition-colors">
+          {categories.map((category, index) => <button key={index} onClick={category.onClick} className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-card border border-border hover:bg-muted/50 transition-colors">
               <div className={`p-3 rounded-xl bg-muted ${category.color}`}>
                 <category.icon className="h-5 w-5" />
               </div>
@@ -266,8 +260,8 @@ const Index = () => {
       </section>
 
       {/* Discover Places */}
-      <section className="mb-6">
-        <div className="px-4 mb-3">
+      <section className="p-4 mb-6">
+        <div className="mb-3">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-lg font-semibold">Discover Tokyo</h2>
@@ -279,7 +273,7 @@ const Index = () => {
             </Button>
           </div>
         </div>
-        <div className="flex gap-3 px-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+        <div className="flex gap-3 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
           {places.map((place, index) => <PlaceCard key={index} {...place} onClick={() => console.log('Place clicked:', place.name)} />)}
         </div>
       </section>
@@ -346,10 +340,6 @@ const Index = () => {
           <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-3 gap-1" onClick={() => navigate('/phrases')}>
             <Languages className="h-5 w-5" />
             <span className="text-[10px]">Language</span>
-          </Button>
-          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-3 gap-1" onClick={() => navigate('/profile')}>
-            <User className="h-5 w-5" />
-            <span className="text-[10px]">Profile</span>
           </Button>
         </div>
       </nav>
