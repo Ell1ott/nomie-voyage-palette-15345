@@ -42,9 +42,20 @@ export const PlaceCard = ({
     >
       {/* Image Section - 60% */}
       <div className="relative h-[60%] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
-          <div className="text-7xl">{image}</div>
-        </div>
+        {image.startsWith('http') || image.startsWith('/') || image.includes('assets') ? (
+          <>
+            <img 
+              src={image} 
+              alt={name}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+          </>
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
+            <div className="text-7xl">{image}</div>
+          </div>
+        )}
         {/* Gradient overlay at bottom */}
         <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/30 to-transparent" />
         

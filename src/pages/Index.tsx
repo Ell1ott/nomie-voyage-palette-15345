@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { Home, Compass, Calendar, MessageCircle, User, MapPin, Clock, Plane, Hotel, Utensils, Camera, Map, ChevronRight, Search, Bell, Wallet, Ticket } from "lucide-react";
 import sensojiImage from "@/assets/sensoji-temple.jpg";
 import elliotAvatar from "@/assets/elliot-avatar.png";
+import sensojiPlaceImage from "@/assets/sensoji-place.jpg";
 const Index = () => {
   const navigate = useNavigate();
   const [showWeatherAlert, setShowWeatherAlert] = useState(true);
@@ -82,7 +83,7 @@ const Index = () => {
     category: "Attraction" as const,
     rating: 4.9,
     reviewCount: "28k",
-    image: "⛩️"
+    image: sensojiPlaceImage
   }, {
     name: "Tokyo Skytree",
     location: "Sumida · Tokyo",
