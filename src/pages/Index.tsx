@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Home, Compass, Calendar, MessageCircle, User, MapPin, Clock, Plane, Hotel, Utensils, Camera, Map, ChevronRight, Search, Bell, Wallet, Ticket } from "lucide-react";
 import sensojiImage from "@/assets/sensoji-temple.jpg";
+import elliotAvatar from "@/assets/elliot-avatar.png";
 const Index = () => {
   const navigate = useNavigate();
   const [showWeatherAlert, setShowWeatherAlert] = useState(true);
@@ -134,8 +135,8 @@ const Index = () => {
       <header className="sticky top-0 z-50 w-full bg-card border-b border-border">
         <div className="flex h-14 items-center justify-between px-4">
           <div className="flex items-center gap-3">
-            <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="text-lg">✈️</span>
+            <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+              <img src={elliotAvatar} alt="Elliot" className="h-full w-full object-cover" />
             </div>
             <div>
               <h1 className="text-base font-semibold">hi elliot</h1>
