@@ -1,94 +1,133 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Compass, Sparkles, MapPin, MessageCircle } from "lucide-react";
+import { Compass, Sparkles, MapPin, MessageCircle, Search, Bell, User } from "lucide-react";
 
 const Index = () => {
   const features = [
     {
       icon: Compass,
-      emoji: "🧭",
       title: "Smart Trip Planning",
-      description: "Let me plan your perfect itinerary based on your interests, budget, and travel style",
+      description: "AI-powered itineraries tailored to your interests and travel style",
     },
     {
       icon: Sparkles,
-      emoji: "✨",
       title: "Local Insider Tips",
-      description: "Discover hidden gems and authentic experiences that only locals know about",
+      description: "Discover hidden gems and authentic local experiences",
     },
     {
       icon: MapPin,
-      emoji: "📍",
       title: "Real-Time Guidance",
-      description: "Get personalized recommendations wherever you are, whenever you need them",
+      description: "Personalized recommendations wherever you go",
     },
     {
       icon: MessageCircle,
-      emoji: "💬",
       title: "24/7 Travel Buddy",
-      description: "Ask me anything, anytime. I'm always here to help make your trip amazing",
+      description: "Always here to help make your trip amazing",
     },
   ];
 
+  const destinations = [
+    { name: "Paris", tag: "Romantic", image: "🗼" },
+    { name: "Tokyo", tag: "Culture", image: "🗾" },
+    { name: "Bali", tag: "Beach", image: "🏖️" },
+    { name: "Iceland", tag: "Adventure", image: "🏔️" },
+  ];
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-accent to-secondary py-20 px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-20"></div>
-        
-        <div className="relative max-w-5xl mx-auto text-center">
-          <div className="animate-bounce-gentle inline-block text-7xl mb-6">
-            ✈️
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
+        <div className="max-w-7xl mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
+          <div className="flex items-center gap-3">
+            <div className="text-2xl">✈️</div>
+            <h1 className="text-xl font-bold">Nomie</h1>
           </div>
-          
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Meet Nomie
-            <br />
-            <span className="text-white/90">Your AI Travel Companion</span>
-          </h1>
-          
-          <p className="text-xl sm:text-2xl text-white/90 mb-10 max-w-2xl mx-auto font-medium">
-            Planning a trip shouldn't feel like work. Let me handle the details while you dream about the adventure! 🌍
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-primary">
-              Start Planning ✨
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="icon">
+              <Search className="h-5 w-5" />
             </Button>
-            <Button size="lg" variant="ghost" className="text-white hover:bg-white/20 backdrop-blur-sm">
-              Explore Features 🗺️
+            <Button variant="ghost" size="icon">
+              <Bell className="h-5 w-5" />
             </Button>
+            <Button variant="ghost" size="icon">
+              <User className="h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="px-4 sm:px-6 py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+              Your AI Travel Companion
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+              Planning trips has never been easier. Let Nomie handle the details while you dream about the adventure.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              <Button size="lg">
+                Start Planning
+              </Button>
+              <Button size="lg" variant="outline">
+                Explore Features
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Destinations */}
+      <section className="px-4 sm:px-6 py-12 bg-muted/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="text-2xl font-bold text-foreground">Popular Destinations</h3>
+            <Button variant="ghost" className="text-primary">View All</Button>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {destinations.map((dest, index) => (
+              <Card key={index} className="card-elevated p-6 hover:scale-[1.02] transition-transform cursor-pointer">
+                <div className="text-center">
+                  <div className="text-5xl mb-3">{dest.image}</div>
+                  <h4 className="font-semibold text-foreground mb-1">{dest.name}</h4>
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                    {dest.tag}
+                  </span>
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-              Everything You Need for Amazing Trips 🎒
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From planning to exploring, I've got your back every step of the way
+      <section className="px-4 sm:px-6 py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Everything You Need
+            </h3>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              From planning to exploring, we've got you covered
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="glass-card p-8 hover:scale-105 transition-all duration-300 ease-spring border-2 hover:shadow-2xl group"
+                className="card-elevated p-8 hover:scale-[1.02] transition-all group"
               >
                 <div className="flex items-start gap-4">
-                  <div className="text-5xl animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
-                    {feature.emoji}
+                  <div className="p-3 rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <feature.icon className="h-6 w-6" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    <h4 className="text-xl font-semibold text-foreground mb-2">
                       {feature.title}
-                    </h3>
-                    <p className="text-muted-foreground text-lg leading-relaxed">
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -100,32 +139,24 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-accent via-primary to-secondary relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-20"></div>
-        
-        <div className="relative max-w-4xl mx-auto text-center">
-          <div className="text-6xl mb-6 animate-bounce-gentle">
-            🌟
-          </div>
-          
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Ready to explore the world differently?
-          </h2>
-          
-          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Join thousands of travelers who've discovered the joy of stress-free trip planning with Nomie!
+      <section className="px-4 sm:px-6 py-16 bg-gradient-to-br from-primary to-accent">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Ready to start your adventure?
+          </h3>
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            Join thousands of travelers who've discovered stress-free trip planning with Nomie
           </p>
-          
-          <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-primary">
-            Let's Go! 🚀
+          <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-lg">
+            Get Started Now
           </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground/5 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-muted-foreground">
+      <footer className="border-t py-8 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-sm text-muted-foreground">
             Made with ❤️ for curious travelers everywhere
           </p>
         </div>
