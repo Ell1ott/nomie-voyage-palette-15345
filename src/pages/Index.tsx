@@ -334,12 +334,9 @@ const Index = () => {
             <Compass className="h-5 w-5" />
             <span className="text-[10px] mt-1">Explore</span>
           </Button>
-          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4 relative" onClick={() => navigate('/phrases')}>
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4" onClick={() => navigate('/phrases')}>
             <Languages className="h-5 w-5" />
             <span className="text-[10px] mt-1">Language</span>
-            <Badge className="absolute top-1 right-2 h-4 px-1.5 flex items-center justify-center text-[8px] bg-secondary text-secondary-foreground">
-              EN→JP
-            </Badge>
           </Button>
           <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
             <User className="h-5 w-5" />
