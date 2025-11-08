@@ -261,8 +261,8 @@ const Index = () => {
       </section>
 
       {/* Discover Places */}
-      <section className="mb-6">
-        <div className="px-4 mb-3">
+      <section className="p-4 mb-6">
+        <div className="mb-3">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-lg font-semibold">Discover Tokyo</h2>
@@ -274,7 +274,7 @@ const Index = () => {
             </Button>
           </div>
         </div>
-        <div className="flex gap-3 px-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+        <div className="flex gap-3 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
           {places.map((place, index) => <PlaceCard key={index} {...place} onClick={() => console.log('Place clicked:', place.name)} />)}
         </div>
       </section>
