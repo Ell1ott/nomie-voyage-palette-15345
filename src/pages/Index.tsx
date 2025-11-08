@@ -6,7 +6,7 @@ import { AlertCard } from "@/components/AlertCard";
 import { PlaceCard } from "@/components/PlaceCard";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Home, Compass, Calendar, MessageCircle, User, MapPin, Clock, Plane, Hotel, Utensils, Camera, Map, ChevronRight, Search, Bell, Wallet, Ticket } from "lucide-react";
+import { Home, Compass, Calendar, MessageCircle, User, MapPin, Clock, Plane, Hotel, Utensils, Camera, Map, ChevronRight, Search, Bell, Wallet, Ticket, Languages } from "lucide-react";
 import sensojiImage from "@/assets/sensoji-temple.jpg";
 import elliotAvatar from "@/assets/elliot-avatar.png";
 import sensojiPlaceImage from "@/assets/sensoji-place.jpg";
@@ -326,17 +326,26 @@ const Index = () => {
             <Home className="h-5 w-5 text-primary" />
             <span className="text-[10px] font-medium mt-1 text-primary">Home</span>
           </Button>
-          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
-            <Compass className="h-5 w-5" />
-            <span className="text-[10px] mt-1">Discover</span>
-          </Button>
-          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
-            <Calendar className="h-5 w-5" />
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4 relative">
+            <div className="relative">
+              <Calendar className="h-5 w-5" />
+              <Plane className="h-2.5 w-2.5 absolute -top-0.5 -right-0.5" />
+            </div>
             <span className="text-[10px] mt-1">Trips</span>
+            <Badge className="absolute top-1 right-2 h-4 min-w-4 flex items-center justify-center px-1 text-[9px] bg-destructive">
+              3
+            </Badge>
           </Button>
-          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4" onClick={() => navigate('/chat')}>
-            <MessageCircle className="h-5 w-5" />
-            <span className="text-[10px] mt-1">Chat</span>
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4" onClick={() => navigate('/explore')}>
+            <Compass className="h-5 w-5" />
+            <span className="text-[10px] mt-1">Explore</span>
+          </Button>
+          <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4 relative" onClick={() => navigate('/phrases')}>
+            <Languages className="h-5 w-5" />
+            <span className="text-[10px] mt-1">Phrases</span>
+            <Badge className="absolute top-1 right-2 h-4 px-1.5 flex items-center justify-center text-[8px] bg-secondary text-secondary-foreground">
+              EN→JP
+            </Badge>
           </Button>
           <Button variant="ghost" size="icon" className="flex-col h-auto py-2 px-4">
             <User className="h-5 w-5" />
