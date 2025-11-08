@@ -41,7 +41,7 @@ const FlightDetail = () => {
       </header>
 
       {/* Hero Section */}
-      <div className="relative h-40 bg-white rounded-b-2xl overflow-hidden">
+      <div className="relative h-40 rounded-b-2xl overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
           <AnimatedGlobePlane />
         </div>
