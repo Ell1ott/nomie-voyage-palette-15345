@@ -190,29 +190,6 @@ const Documents = () => {
         </div>
       </header>
 
-      {/* Hero Status Card */}
-      <section className="p-4">
-        <Card className={`${currentStatus.gradient} border-0 overflow-hidden`}>
-          <div className="p-6 min-h-[140px] flex flex-col justify-between">
-            <div className="flex items-start gap-4">
-              {currentStatus.icon}
-              <div className="flex-1">
-                <h2 className="text-[22px] font-bold text-white mb-2">
-                  {currentStatus.headline}
-                </h2>
-                <p className="text-[15px] text-white/90 mb-3">
-                  {currentStatus.subtext}
-                </p>
-                <div className="flex items-center gap-2 text-white/90">
-                  <Calendar className="h-4 w-4" />
-                  <span className="text-sm font-medium">Departing in 8 days</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Card>
-      </section>
-
       {/* Reminders Toggle */}
       <section className="px-4 mb-4">
         <div className="flex items-center justify-between">
